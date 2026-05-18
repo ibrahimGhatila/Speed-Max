@@ -1,8 +1,7 @@
 import { coverage } from "@/lib/site";
 
-// Map asset lives at /public/malaysia-map.png — the halftone Malaysia image.
-// Swap the file there or update MAP_SRC to point elsewhere.
-const MAP_SRC = "/malaysia-map.png";
+// Map asset committed to the repo at /public/malaysia-map.jfif
+const MAP_SRC = "/malaysia-map.jfif";
 
 export default function Coverage() {
   return (
