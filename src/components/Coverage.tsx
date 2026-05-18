@@ -5,7 +5,7 @@ const MAP_SRC = "/malaysia-map.jpg";
 export default function Coverage() {
   return (
     <section className="relative bg-white">
-      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10 py-10 lg:py-14">
+      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10 pt-4 pb-10 lg:pt-6 lg:pb-14">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left — header + city list */}
           <div className="lg:col-span-5">
@@ -17,16 +17,16 @@ export default function Coverage() {
               <span className="text-mute">across Malaysia.</span>
             </h2>
 
-            <ul className="mt-8 max-w-sm">
+            <ul className="mt-8 max-w-md">
               {coverage.map((r, i) => (
                 <li
                   key={r.region}
-                  className="flex items-baseline gap-5 py-3 border-b border-line first:border-t"
+                  className="flex items-baseline gap-6 py-4 border-b border-line first:border-t"
                 >
-                  <span className="text-[10px] tabular text-mute tracking-wider w-6">
+                  <span className="text-[11px] tabular text-mute tracking-wider w-6">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-display text-[17px] lg:text-[18px] text-ink tracking-[-0.02em]">
+                  <span className="font-display text-[24px] lg:text-[28px] text-ink tracking-[-0.025em]">
                     {r.region}
                   </span>
                 </li>
