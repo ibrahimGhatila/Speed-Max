@@ -15,30 +15,37 @@ export default function Approach() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-px bg-line border border-line overflow-hidden">
+        <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-4 lg:gap-5">
           {approach.map((a, i) => (
-            <Reveal key={a.number} delay={120 + i * 120}>
-              <div className="bg-white p-7 lg:p-9 min-h-[220px] flex flex-col justify-between relative h-full">
-                <div className="flex items-baseline justify-between">
-                  <div className="font-display text-[44px] lg:text-[60px] tabular text-ink leading-none">
-                    {a.number}
-                  </div>
-                  <span className="text-[10px] tracking-[0.18em] uppercase text-mute">
-                    Phase {i + 1}
+            <Reveal key={a.number} delay={120 + i * 120} className="h-full">
+              <article className="group relative h-full min-h-[300px] lg:min-h-[340px] overflow-hidden border border-line bg-white transition-all duration-500 hover:border-ink/25 hover:shadow-[0_24px_60px_-30px_rgba(10,20,40,0.18)] hover:-translate-y-1 flex flex-col">
+                {/* Watermark number */}
+                <span
+                  aria-hidden="true"
+                  className="absolute -bottom-12 -right-6 lg:-bottom-16 lg:-right-8 font-display tabular leading-[0.8] text-[220px] lg:text-[280px] text-ink/[0.04] group-hover:text-ink/[0.09] transition-colors duration-700 select-none pointer-events-none"
+                >
+                  {a.number}
+                </span>
+
+                {/* Top phase label */}
+                <div className="relative p-8 lg:p-10 flex items-baseline justify-between">
+                  <span className="text-[10px] tracking-[0.18em] uppercase font-medium text-mute">
+                    Phase {String(i + 1).padStart(2, "0")}
                   </span>
+                  <span className="h-1.5 w-1.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <div className="mt-6">
-                  <h3 className="font-display text-[20px] lg:text-[22px] text-ink tracking-[-0.02em]">
+
+                {/* Bottom content, pushed down */}
+                <div className="relative mt-auto px-8 lg:px-10 pb-8 lg:pb-10">
+                  <div className="h-px w-8 bg-accent transition-all duration-500 group-hover:w-16" />
+                  <h3 className="mt-5 font-display text-[22px] lg:text-[26px] text-ink tracking-[-0.025em]">
                     {a.title}
                   </h3>
-                  <p className="mt-2 text-[13px] text-ink/65 leading-relaxed">
+                  <p className="mt-3 text-[13px] lg:text-[14px] text-ink/65 leading-[1.6] max-w-sm">
                     {a.body}
                   </p>
                 </div>
-                {i < approach.length - 1 && (
-                  <span className="hidden md:block absolute top-1/2 -right-1.5 w-3.5 h-3.5 bg-accent border-[3px] border-white" />
-                )}
-              </div>
+              </article>
             </Reveal>
           ))}
         </div>
