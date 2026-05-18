@@ -4,8 +4,8 @@
 const u = (id: string) => `https://images.unsplash.com/${id}`;
 
 export const images = {
-  // ─── Hero (keep — Taylor Vick blue fibre cables, the iconic infra shot)
-  heroFiber: u("photo-1544197150-b99a580bb7a8"),
+  // ─── Hero — keep as-is, the one you liked
+  heroFiber: u("photo-1558494949-ef010cbdcc31"),
 
   // ─── Featured project — Alexandre Debiève macro circuit board (moody, technical)
   featuredProject: u("photo-1518770660439-4636190af475"),
