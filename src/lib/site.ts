@@ -23,12 +23,30 @@ export const site = {
   },
 };
 
-export const nav = [
+export type NavItem = {
+  label: string;
+  href: string;
+  children?: { label: string; href: string; short?: string }[];
+};
+
+export const nav: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Capabilities", href: "/products" },
+  {
+    label: "Capabilities",
+    href: "/products",
+    children: [
+      { label: "Overview", href: "/products", short: "All six disciplines at a glance" },
+      { label: "Structured Cabling", href: "/products/structured-cabling", short: "Cat6A & fibre, certified to standard" },
+      { label: "System Integration", href: "/products/system-integration", short: "Servers, switching & storage as one" },
+      { label: "IP Telephony", href: "/products/ip-telephony", short: "Modern PBX & SIP, on-prem or cloud" },
+      { label: "Security & Access", href: "/products/security", short: "IP CCTV & access control" },
+      { label: "Collaboration Rooms", href: "/products/collaboration", short: "Teams, Zoom & Meet ready" },
+      { label: "AutoCount Suite", href: "/products/autocount", short: "Accounting, POS & e-Invoice" },
+    ],
+  },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
-] as const;
+];
 
 export const services = [
   {
