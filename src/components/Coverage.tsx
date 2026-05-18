@@ -1,22 +1,20 @@
-import Image from "next/image";
 import { coverage } from "@/lib/site";
 
-// Real Malaysia outline map asset from Wikimedia Commons (public domain).
-// Source: https://commons.wikimedia.org/wiki/File:Malaysia_blank.png
-// Rendered in white via CSS filters and overlaid with pin markers.
+// Real Malaysia outline SVG from the public-domain `mapsicon` project on
+// GitHub, served via jsDelivr CDN. The viewBox is 1000 × 1000 with the country
+// drawn at true geographic proportions.
+// Source: https://github.com/djaiss/mapsicon
 const MAP_SRC =
-  "https://upload.wikimedia.org/wikipedia/commons/8/86/Malaysia_blank.png";
+  "https://cdn.jsdelivr.net/gh/djaiss/mapsicon@master/all/malaysia/vector.svg";
 
 // Pin coordinates as percentages of the rendered map container.
-// The Wikimedia blank map is roughly equirectangular over Malaysia's bounds,
-// so these are approximate geographic placements — tune visually as needed.
 const pins = [
-  { region: "Johor", x: 26, y: 78, main: true },
-  { region: "Klang Valley", x: 19.5, y: 60 },
-  { region: "Penang", x: 17, y: 38 },
-  { region: "East Coast", x: 30, y: 50 },
-  { region: "Singapore", x: 26, y: 86, below: true },
-  { region: "Borneo", x: 68, y: 60 },
+  { region: "Johor", x: 34, y: 56, main: true },
+  { region: "Klang Valley", x: 27, y: 47 },
+  { region: "Penang", x: 24, y: 32 },
+  { region: "East Coast", x: 36, y: 42 },
+  { region: "Singapore", x: 33.5, y: 60, below: true },
+  { region: "Borneo", x: 64, y: 50 },
 ];
 
 export default function Coverage() {
@@ -24,6 +22,15 @@ export default function Coverage() {
     <section className="relative bg-ink-deep py-20 lg:py-28 overflow-hidden">
       <div className="absolute -left-32 top-1/3 h-[400px] w-[400px] rounded-full bg-accent/10 blur-[140px]" />
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
+        {/* Section header */}
+        <div className="max-w-3xl mb-12 lg:mb-16">
+          <div className="eyebrow">Coverage</div>
+          <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[52px] text-white">
+            Field engineering{" "}
+            <span className="text-white/55">across Malaysia.</span>
+          </h2>
+        </div>
+
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left — city list */}
           <div className="lg:col-span-4">
@@ -44,23 +51,17 @@ export default function Coverage() {
             </ul>
           </div>
 
-          {/* Right — Malaysia map asset + pin overlay */}
+          {/* Right — Malaysia map + pin overlay */}
           <div className="lg:col-span-8 relative">
-            <div
-              className="relative w-full"
-              style={{ aspectRatio: "1000 / 560" }}
-            >
-              <Image
+            <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src={MAP_SRC}
                 alt="Malaysia coverage map"
-                fill
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                className="object-contain"
+                className="absolute inset-0 w-full h-full"
                 style={{
-                  filter:
-                    "brightness(0) invert(1) opacity(0.35)",
+                  filter: "brightness(0) invert(1) opacity(0.5)",
                 }}
-                unoptimized
               />
 
               {pins.map((p) => (
@@ -106,7 +107,9 @@ function Pin({
         <span className="relative h-2.5 w-2.5 rounded-full bg-accent" />
         <span
           className={`absolute text-[11px] tracking-[0.04em] font-medium text-white/90 whitespace-nowrap ${
-            below ? "top-full mt-2" : "left-full ml-2.5 top-1/2 -translate-y-1/2"
+            below
+              ? "top-full mt-2"
+              : "left-full ml-2.5 top-1/2 -translate-y-1/2"
           }`}
         >
           {region}

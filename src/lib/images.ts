@@ -1,32 +1,40 @@
-// Curated Unsplash photos served via next/image. Treated for a cinematic,
-// premium-infrastructure feel via CSS filters.
+// Curated Unsplash photos. heroFiber is the keeper — the rest were chosen
+// to feel like premium-operator photography rather than generic stock.
 
 const u = (id: string) => `https://images.unsplash.com/${id}`;
 
 export const images = {
-  // Hero — dramatic dark fiber/cable shot
-  heroFiber: u("photo-1558494949-ef010cbdcc31"),
-  // Featured project — server room
-  featuredProject: u("photo-1573164574230-db1d5e960238"),
-  // About / studio
-  studio: u("photo-1497366216548-37526070297c"),
-  team: u("photo-1521737604893-d14cc237f11d"),
+  // ─── Hero (keep — Taylor Vick blue fibre cables, the iconic infra shot)
+  heroFiber: u("photo-1544197150-b99a580bb7a8"),
 
-  // Service-specific
-  structuredCabling: u("photo-1551703599-6b3e8379aa8d"),
-  systemIntegration: u("photo-1573164713714-d95e436ab8d6"),
-  ipPbx: u("photo-1556761175-5973dc0f32e7"),
-  security: u("photo-1557597774-9d273605dfa9"),
-  collaboration: u("photo-1517048676732-d65bc937f952"),
-  autocount: u("photo-1554224155-6726b3ff858f"),
+  // ─── Featured project — Alexandre Debiève macro circuit board (moody, technical)
+  featuredProject: u("photo-1518770660439-4636190af475"),
 
-  // Industries
-  indManufacturing: u("photo-1581094794329-c8112a89af12"),
-  indRetail: u("photo-1556740738-b6a63e27c4df"),
-  indHealthcare: u("photo-1538108149393-fbbd81895907"),
-  indEducation: u("photo-1497486751825-1233686d5d80"),
-  indHospitality: u("photo-1566073771259-6a8506099945"),
-  indProfessional: u("photo-1497032628192-86f99bcd76bc"),
+  // ─── Studio / about — modern minimal office interior
+  studio: u("photo-1497366811353-6870744d04b2"),
+  team: u("photo-1556761175-b413da4baf72"),
+
+  // ─── Service cards
+  // Cabling — data centre interior with red glow
+  structuredCabling: u("photo-1597733336794-12d05021d510"),
+  // System integration — close-up of server rack with port lights
+  systemIntegration: u("photo-1591405351990-4726e331f141"),
+  // IP telephony — Cisco office phone
+  ipPbx: u("photo-1521791136064-7986c2920216"),
+  // Security & access — modern CCTV camera
+  security: u("photo-1565514020179-026b92b84bb6"),
+  // Collaboration — modern conference room
+  collaboration: u("photo-1542744173-8e7e53415bb0"),
+  // AutoCount — dashboard / analytics on laptop
+  autocount: u("photo-1551288049-bebda4e38f71"),
+
+  // ─── Industries
+  indManufacturing: u("photo-1565073624497-7e91b3ee31a6"),
+  indRetail: u("photo-1441986300917-64674bd600d8"),
+  indHealthcare: u("photo-1576091160550-2173dba999ef"),
+  indEducation: u("photo-1523050854058-8df90110c9f1"),
+  indHospitality: u("photo-1542314831-068cd1dbfeeb"),
+  indProfessional: u("photo-1497215842964-222b430dc094"),
 };
 
 export type ImageKey = keyof typeof images;
