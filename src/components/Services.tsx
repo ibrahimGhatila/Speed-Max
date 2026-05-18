@@ -5,18 +5,19 @@ import { img, type ImageKey } from "@/lib/images";
 
 export default function Services() {
   return (
-    <section className="relative bg-ink py-20 lg:py-28">
-      <div className="absolute inset-0 bg-dots opacity-40 pointer-events-none" />
+    <section className="relative bg-paper py-20 lg:py-28">
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
-            <div className="eyebrow">02 — Capabilities</div>
-            <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[56px] text-white">
+            <div className="text-[11px] tracking-[0.18em] uppercase font-medium text-accent">
+              Capabilities
+            </div>
+            <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[56px] text-ink">
               Six disciplines.{" "}
-              <span className="text-white/55">One accountable team.</span>
+              <span className="text-mute">One accountable team.</span>
             </h2>
           </div>
-          <div className="lg:col-span-4 lg:col-start-9 text-[14px] leading-relaxed text-white/65">
+          <div className="lg:col-span-4 lg:col-start-9 text-[14px] leading-relaxed text-ink/65">
             We design, install and maintain the systems your business runs on —
             from the cabling in your walls to the accounting on your laptops.
           </div>
@@ -27,50 +28,52 @@ export default function Services() {
             <Link
               key={svc.slug}
               href={`/products#${svc.slug}`}
-              className="card-hover group relative overflow-hidden bg-ink-soft/50 border border-white/8 hover:border-white/20 transition-colors"
+              className="group relative block aspect-[4/5] overflow-hidden border border-line"
             >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={img(svc.image as ImageKey, 900, 75)}
-                  alt={svc.title}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover duotone-cool card-image"
-                />
-                <div className="absolute inset-0 card-overlay" />
+              <Image
+                src={img(svc.image as ImageKey, 900, 75)}
+                alt={svc.title}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover duotone-cool transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/90 via-ink-deep/30 to-transparent" />
+
+              <div className="absolute top-5 right-5 h-9 w-9 border border-white/30 flex items-center justify-center text-white/85 group-hover:bg-accent group-hover:border-accent group-hover:text-white transition-colors">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  aria-hidden="true"
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                >
+                  <path
+                    d="M3 11L11 3M11 3H4M11 3V10"
+                    stroke="currentColor"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
               </div>
 
-              <div className="p-5 lg:p-6">
-                <h3 className="font-display text-[18px] lg:text-[20px] text-white tracking-[-0.02em]">
+              <div className="absolute inset-x-6 bottom-6 text-white">
+                <div className="text-[10px] tracking-[0.18em] uppercase text-white/65 font-medium">
+                  Capability
+                </div>
+                <h3 className="mt-2 font-display text-[22px] lg:text-[26px] tracking-[-0.02em]">
                   {svc.title}
                 </h3>
-                <p className="mt-1.5 text-[13px] text-white/65 leading-relaxed">
+                <p className="mt-2 text-[13px] text-white/85 leading-[1.55] max-w-[95%]">
                   {svc.short}
                 </p>
-                <div className="mt-4 flex items-center gap-2 text-[12px] font-medium text-accent">
-                  Read capability
-                  <ArrowRight />
-                </div>
+                <div className="mt-4 h-px w-8 bg-accent group-hover:w-14 transition-all duration-500" />
               </div>
             </Link>
           ))}
         </div>
       </div>
     </section>
-  );
-}
-
-function ArrowRight() {
-  return (
-    <svg
-      width="12"
-      height="12"
-      viewBox="0 0 14 14"
-      fill="none"
-      aria-hidden="true"
-      className="inline-block transition-transform group-hover:translate-x-1"
-    >
-      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
   );
 }

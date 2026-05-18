@@ -7,7 +7,7 @@ export default function Coverage() {
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
             <div className="text-[11px] tracking-[0.18em] uppercase font-medium text-accent">
-              06 — Coverage
+              Coverage
             </div>
             <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[52px] text-ink">
               Field engineering{" "}

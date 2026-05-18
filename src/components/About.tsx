@@ -26,7 +26,7 @@ export default function About() {
 
           <div className="lg:col-span-7 lg:pt-2">
             <div className="text-[11px] tracking-[0.18em] uppercase font-medium text-accent">
-              08 — Studio
+              Studio
             </div>
             <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[56px] text-ink">
               A fourteen-year record{" "}

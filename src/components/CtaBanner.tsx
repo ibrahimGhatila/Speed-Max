@@ -10,7 +10,7 @@ export default function CtaBanner() {
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10 py-20 lg:py-28">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
           <div className="lg:col-span-8">
-            <div className="eyebrow">09 — Engage</div>
+            <div className="eyebrow">Engage</div>
             <h2 className="mt-4 font-display text-[34px] sm:text-[48px] lg:text-[64px] text-white leading-[1.04]">
               Let&apos;s build something{" "}
               <span className="relative inline-block text-white">

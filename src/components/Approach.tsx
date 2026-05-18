@@ -7,7 +7,7 @@ export default function Approach() {
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
-            <div className="eyebrow">04 — Method</div>
+            <div className="eyebrow">Method</div>
             <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[56px] text-white">
               Three steps.{" "}
               <span className="text-white/55">No surprises.</span>

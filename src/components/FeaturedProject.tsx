@@ -8,7 +8,7 @@ export default function FeaturedProject() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10 w-full">
         <div className="grid lg:grid-cols-12 gap-8 items-end mb-10 lg:mb-14">
           <div className="lg:col-span-8">
-            <div className="eyebrow">05 — Selected work</div>
+            <div className="eyebrow">Selected work</div>
             <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[52px] text-white">
               A recent project{" "}
               <span className="text-white/55">we&apos;re proud of.</span>

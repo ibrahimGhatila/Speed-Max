@@ -15,7 +15,7 @@ export default function ContactPage() {
 
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="flex items-center justify-between text-[11px] tracking-[0.16em] uppercase text-white/55">
-          <span>04 — Contact</span>
+          <span>Contact</span>
           <span className="hidden sm:block">
             Replies within one working day
           </span>

@@ -21,7 +21,7 @@ export default function ProductsPage() {
         <div className="absolute -right-32 top-0 h-[380px] w-[380px] rounded-full bg-accent/20 blur-[140px]" />
         <div className="relative mx-auto max-w-[1440px] w-full px-6 lg:px-10">
           <div className="flex items-center justify-between text-[11px] tracking-[0.16em] uppercase text-white/55">
-            <span>02 — Capabilities</span>
+            <span>Capabilities</span>
             <span className="hidden sm:block">Six disciplines</span>
           </div>
           <div className="h-px bg-white/10 mt-4" />

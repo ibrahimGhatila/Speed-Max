@@ -22,7 +22,7 @@ export default function Quote() {
           </div>
 
           <div className="lg:col-span-8 lg:pl-4">
-            <div className="eyebrow">07 — Testimony</div>
+            <div className="eyebrow">Testimony</div>
             <blockquote className="mt-6 font-display text-[24px] sm:text-[30px] lg:text-[40px] leading-[1.18] tracking-[-0.02em] text-white max-w-3xl">
               <span className="text-accent">“</span>
               {featured.quote}

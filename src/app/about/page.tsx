@@ -24,7 +24,7 @@ export default function AboutPage() {
 
         <div className="relative mx-auto max-w-[1440px] w-full px-6 lg:px-10">
           <div className="flex items-center justify-between text-[11px] tracking-[0.16em] uppercase text-white/55">
-            <span>03 — About</span>
+            <span>About</span>
             <span className="hidden sm:block tabular">
               Est. {site.foundedYear}
             </span>
