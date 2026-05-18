@@ -24,13 +24,15 @@ export const images = {
     "https://eu-images.contentstack.com/v3/assets/blt2db30e0332fda6df/blt9ad3678867362471/6747370d803d5cb74e9cfe0b/021621_CollabMeeting_370259744.jpeg",
   autocount: u("photo-1551288049-bebda4e38f71"),
 
-  // Industries
-  indManufacturing: u("photo-1565073624497-7e91b3ee31a6"),
-  indRetail: u("photo-1441986300917-64674bd600d8"),
-  indHealthcare: u("photo-1576091160550-2173dba999ef"),
-  indEducation: u("photo-1523050854058-8df90110c9f1"),
+  // Industries — subjects per the brief (industrial park, mall, hospital,
+  // school, hotel, office tower). Unsplash IDs chosen for the subject match;
+  // swap individually if any one doesn't read right.
+  indManufacturing: u("photo-1518709268805-4e9042af2176"),
+  indRetail: u("photo-1481437156560-3205f6a55735"),
+  indHealthcare: u("photo-1586773860418-d37222d8fce3"),
+  indEducation: u("photo-1562774053-701939374585"),
   indHospitality: u("photo-1542314831-068cd1dbfeeb"),
-  indProfessional: u("photo-1497215842964-222b430dc094"),
+  indProfessional: u("photo-1486406146926-c627a92ad1ab"),
 };
 
 export type ImageKey = keyof typeof images;
