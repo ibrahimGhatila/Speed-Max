@@ -72,8 +72,15 @@ h1, h2, h3, h4, h5 {
 /* Gradients used over hero / feature imagery */
 .hero-overlay {
   background:
-    linear-gradient(90deg, var(--color-ink-deep) 0%, rgba(10, 20, 40, 0.8) 35%, rgba(10, 20, 40, 0.2) 65%, rgba(10, 20, 40, 0) 100%),
-    linear-gradient(180deg, rgba(5, 10, 22, 0.4) 0%, transparent 30%, rgba(5, 10, 22, 0.7) 100%);
+    linear-gradient(
+      90deg,
+      var(--color-ink-deep) 0%,
+      var(--color-ink-deep) 28%,
+      rgba(10, 20, 40, 0.9) 50%,
+      rgba(10, 20, 40, 0.45) 72%,
+      rgba(10, 20, 40, 0) 100%
+    ),
+    linear-gradient(180deg, rgba(5, 10, 22, 0.45) 0%, transparent 30%, rgba(5, 10, 22, 0.75) 100%);
 }
 
 .card-overlay {

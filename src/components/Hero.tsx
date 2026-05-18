@@ -21,13 +21,13 @@ export default function Hero() {
 
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="flex-1 mx-auto w-full max-w-[1440px] px-6 lg:px-10 pt-10 lg:pt-20 pb-10 lg:pb-14 flex flex-col justify-center">
-          <div className="max-w-3xl rise">
-            <h1 className="font-display text-[34px] sm:text-[44px] lg:text-[60px] xl:text-[72px] text-white max-w-3xl">
+          <div className="max-w-5xl rise">
+            <h1 className="font-display text-[40px] sm:text-[56px] lg:text-[84px] xl:text-[104px] text-white max-w-5xl">
               Network infrastructure for businesses that{" "}
               <span className="text-white/55">can&apos;t afford</span>{" "}
               <span className="relative inline-block text-accent">
                 downtime.
-                <span className="absolute -right-2 top-[0.1em] h-2 w-2 bg-accent" />
+                <span className="absolute -right-2 top-[0.1em] h-2.5 w-2.5 bg-accent" />
               </span>
             </h1>
           </div>
