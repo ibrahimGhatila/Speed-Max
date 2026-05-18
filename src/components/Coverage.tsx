@@ -1,7 +1,7 @@
 import { coverage } from "@/lib/site";
 
-// Map asset committed to the repo at /public/malaysia-map.jfif
-const MAP_SRC = "/malaysia-map.jfif";
+// Map asset committed at /public/malaysia-map.jpg
+const MAP_SRC = "/malaysia-map.jpg";
 
 export default function Coverage() {
   return (
