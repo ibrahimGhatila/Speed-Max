@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" fill="none">
+  <!-- Peninsular Malaysia -->
+  <path
+    d="M 260 30
+       C 295 22, 345 20, 380 30
+       C 395 45, 405 70, 412 95
+       C 420 125, 425 155, 425 185
+       C 426 215, 430 245, 435 275
+       C 438 305, 435 335, 425 360
+       C 412 388, 395 415, 378 440
+       C 365 458, 350 470, 335 478
+       C 322 484, 310 482, 302 472
+       C 293 460, 288 445, 283 430
+       C 275 408, 268 388, 260 368
+       C 250 342, 240 318, 232 292
+       C 224 264, 218 234, 216 204
+       C 215 175, 218 145, 222 115
+       C 226 85, 232 60, 240 42
+       C 248 32, 254 28, 260 30 Z"
+    stroke="currentColor"
+    stroke-width="1.2"
+    stroke-linejoin="round"
+  />
+
+  <!-- East Malaysia: Sarawak + Sabah on Borneo -->
+  <path
+    d="M 530 250
+       C 570 238, 625 232, 680 234
+       C 735 236, 790 244, 830 258
+       C 860 268, 880 282, 888 300
+       C 892 314, 884 326, 870 332
+       C 838 340, 790 340, 745 336
+       C 695 332, 645 328, 600 324
+       C 560 320, 530 312, 518 294
+       C 510 280, 514 264, 530 250 Z"
+    stroke="currentColor"
+    stroke-width="1.2"
+    stroke-linejoin="round"
+  />
+
+  <!-- Singapore (small island below peninsular tip) -->
+  <ellipse cx="318" cy="498" rx="14" ry="5" stroke="currentColor" stroke-width="1" />
+</svg>

@@ -1,11 +1,23 @@
 import { coverage } from "@/lib/site";
 
+// City pins positioned in percentage coordinates over the Malaysia SVG asset
+// at /public/malaysia.svg (viewBox 1000 × 560). Swap the asset there if you
+// want a different basemap — the pin overlay positions stay relative.
+const pins = [
+  { region: "Johor", x: 33.8, y: 84, main: true },
+  { region: "Klang Valley", x: 24.5, y: 58 },
+  { region: "Penang", x: 22, y: 32 },
+  { region: "East Coast", x: 42, y: 42 },
+  { region: "Singapore", x: 31.8, y: 90, below: true },
+  { region: "Borneo", x: 70, y: 53 },
+];
+
 export default function Coverage() {
   return (
     <section className="relative bg-paper py-20 lg:py-28 overflow-hidden">
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left — city list only */}
+          {/* Left — city list */}
           <div className="lg:col-span-4">
             <ul>
               {coverage.map((r, i) => (
@@ -24,9 +36,20 @@ export default function Coverage() {
             </ul>
           </div>
 
-          {/* Right — Malaysia map */}
+          {/* Right — Malaysia map asset with pin overlay */}
           <div className="lg:col-span-8 relative">
-            <MalaysiaMap />
+            <div className="relative w-full" style={{ aspectRatio: "1000 / 560" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/malaysia.svg"
+                alt="Malaysia coverage map"
+                className="absolute inset-0 w-full h-full text-ink/25"
+              />
+
+              {pins.map((p) => (
+                <Pin key={p.region} {...p} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -34,122 +57,44 @@ export default function Coverage() {
   );
 }
 
-function MalaysiaMap() {
-  // Geographically-approximated outline of Malaysia. Coordinates tuned
-  // visually rather than projected — clean and recognisable, not survey-grade.
-  const peninsular =
-    "M 175 50 " +
-    "C 195 40, 230 38, 250 45 " +
-    "C 265 70, 278 110, 282 150 " +
-    "C 292 200, 290 250, 282 290 " +
-    "C 272 340, 262 380, 252 420 " +
-    "C 248 440, 246 458, 246 466 " +
-    "C 241 470, 232 466, 228 458 " +
-    "C 220 446, 215 425, 213 405 " +
-    "C 208 370, 200 340, 195 310 " +
-    "C 188 280, 180 250, 178 220 " +
-    "C 175 190, 172 160, 173 130 " +
-    "C 172 100, 173 70, 175 50 Z";
-
-  const borneo =
-    "M 340 285 " +
-    "C 365 268, 410 258, 450 258 " +
-    "C 490 256, 528 262, 548 275 " +
-    "C 560 286, 562 302, 552 315 " +
-    "C 535 322, 500 324, 470 322 " +
-    "C 430 320, 390 320, 355 314 " +
-    "C 340 307, 332 296, 340 285 Z";
-
-  const stroke = "rgba(10, 20, 40, 0.22)";
-  const fill = "rgba(10, 20, 40, 0.035)";
-
-  return (
-    <svg viewBox="0 0 600 500" className="w-full h-auto" aria-hidden="true">
-      <defs>
-        <radialGradient id="cv-ping" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#e11d2a" stopOpacity="0.45" />
-          <stop offset="100%" stopColor="#e11d2a" stopOpacity="0" />
-        </radialGradient>
-      </defs>
-
-      <path d={peninsular} fill={fill} stroke={stroke} strokeWidth="1.2" />
-      <path d={borneo} fill={fill} stroke={stroke} strokeWidth="1.2" />
-
-      {/* Singapore — small island below peninsular tip */}
-      <ellipse
-        cx="244"
-        cy="478"
-        rx="9"
-        ry="4"
-        fill={fill}
-        stroke={stroke}
-        strokeWidth="1"
-      />
-
-      <Pin x={245} y={438} label="Johor" main />
-      <Pin x={205} y={330} label="Klang Valley" />
-      <Pin x={183} y={210} label="Penang" />
-      <Pin x={278} y={245} label="East Coast" />
-      <Pin x={244} y={478} label="Singapore" align="below" />
-      <Pin x={445} y={290} label="Borneo" />
-    </svg>
-  );
-}
-
 function Pin({
+  region,
   x,
   y,
-  label,
   main = false,
-  align = "right",
+  below = false,
 }: {
+  region: string;
   x: number;
   y: number;
-  label: string;
   main?: boolean;
-  align?: "right" | "below";
+  below?: boolean;
 }) {
   return (
-    <g>
-      {main && <circle cx={x} cy={y} r="22" fill="url(#cv-ping)" />}
-      <circle cx={x} cy={y} r={main ? 4.5 : 3} fill="#e11d2a" />
-      {main && (
-        <circle
-          cx={x}
-          cy={y}
-          r="9"
-          fill="none"
-          stroke="#e11d2a"
-          strokeOpacity="0.5"
-          strokeWidth="1"
-        />
-      )}
-      {align === "right" ? (
-        <text
-          x={x + 11}
-          y={y + 3.5}
-          fill="rgba(10, 20, 40, 0.8)"
-          fontSize="11"
-          fontFamily="var(--font-sans), system-ui, sans-serif"
-          fontWeight="500"
-          letterSpacing="0.04em"
+    <div
+      className="absolute"
+      style={{
+        left: `${x}%`,
+        top: `${y}%`,
+        transform: "translate(-50%, -50%)",
+      }}
+    >
+      <div className="relative flex flex-col items-center">
+        {main && (
+          <span className="absolute inset-0 m-auto h-12 w-12 rounded-full bg-accent/25 blur-md" />
+        )}
+        <span className="relative h-2.5 w-2.5 rounded-full bg-accent" />
+        {main && (
+          <span className="absolute h-5 w-5 rounded-full border border-accent/55" />
+        )}
+        <span
+          className={`absolute text-[11px] tracking-[0.04em] font-medium text-ink/75 whitespace-nowrap ${
+            below ? "top-full mt-2" : "left-full ml-2 top-1/2 -translate-y-1/2"
+          }`}
         >
-          {label}
-        </text>
-      ) : (
-        <text
-          x={x}
-          y={y + 16}
-          textAnchor="middle"
-          fill="rgba(10, 20, 40, 0.65)"
-          fontSize="10"
-          fontFamily="var(--font-sans), system-ui, sans-serif"
-          fontWeight="500"
-          letterSpacing="0.06em"
-        >
-          {label}
-        </text>
-      )}
-    </g>
+          {region}
+        </span>
+      </div>
+    </div>
   );
 }
