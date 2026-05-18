@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { ShieldCheck, Users, BadgeCheck, Play } from "lucide-react";
+import { images } from "@/lib/images";
 
 const reasons = [
   {
@@ -26,22 +28,15 @@ export default function WhyUs() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative">
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-gradient-to-br from-navy-700 to-navy-950 border border-white/10">
-            <div className="absolute inset-0 grid grid-cols-12 gap-1 p-3 opacity-70">
-              {Array.from({ length: 96 }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`rounded-sm h-1.5 ${
-                    i % 7 === 0
-                      ? "bg-brand-500"
-                      : i % 3 === 0
-                      ? "bg-emerald-400/80"
-                      : "bg-white/15"
-                  }`}
-                  style={{ alignSelf: "center" }}
-                />
-              ))}
-            </div>
+          <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <Image
+              src={`${images.serverRack}?auto=format&fit=crop&w=1400&q=80`}
+              alt="Network server rack with active port indicators"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-navy-950/10 to-transparent" />
             <button
               type="button"
               aria-label="Play introduction"

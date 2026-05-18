@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Cable,
   Server,
@@ -11,6 +12,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { services } from "@/lib/site";
+import { images } from "@/lib/images";
 import CtaBanner from "@/components/CtaBanner";
 
 const iconMap = {
@@ -56,6 +58,8 @@ export default function ProductsPage() {
           {services.map((svc, i) => {
             const Icon = iconMap[svc.icon as keyof typeof iconMap] ?? Server;
             const reverse = i % 2 === 1;
+            const imgSrc =
+              images[svc.image as keyof typeof images] ?? images.structuredCabling;
             return (
               <article
                 id={svc.slug}
@@ -93,14 +97,21 @@ export default function ProductsPage() {
                 </div>
 
                 <div className={reverse ? "lg:order-1" : ""}>
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-navy-800 to-navy-950 border border-navy-900/10">
-                    <div className="absolute inset-0 bg-grid opacity-30" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="h-32 w-32 rounded-3xl bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-brand-400">
-                        <Icon className="h-16 w-16" />
+                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-navy-900/10">
+                    <Image
+                      src={`${imgSrc}?auto=format&fit=crop&w=1200&q=80`}
+                      alt={svc.title}
+                      fill
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-navy-950/10 to-transparent" />
+                    <div className="absolute top-5 left-5">
+                      <div className="h-12 w-12 rounded-xl bg-brand-600 text-white flex items-center justify-center shadow-lg">
+                        <Icon className="h-6 w-6" />
                       </div>
                     </div>
-                    <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-white/95 text-navy-900 p-4">
+                    <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-white/95 backdrop-blur text-navy-900 p-4">
                       <div className="text-xs uppercase tracking-widest text-brand-600 font-semibold">
                         Speedmax · {svc.slug}
                       </div>

@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, CheckCircle2, Gem } from "lucide-react";
+import { images } from "@/lib/images";
 
 const points = [
   "Founded in Johor Bahru in 2010",
@@ -13,32 +15,25 @@ export default function About() {
     <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="relative">
-          <div className="relative aspect-square w-full max-w-lg rounded-3xl overflow-hidden bg-gradient-to-br from-navy-800 to-navy-950 shadow-xl">
-            <div className="absolute inset-0 bg-grid opacity-30" />
-            <div className="absolute inset-0 p-10 flex flex-col justify-between text-white">
-              <div>
-                <div className="text-sm uppercase tracking-[0.3em] text-brand-400 font-semibold">
-                  Since {2010}
-                </div>
-                <div className="mt-3 font-display text-7xl font-bold">14+</div>
-                <div className="text-white/70">years of trusted service</div>
-              </div>
-              <div className="grid grid-cols-2 gap-4 text-sm">
-                <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-                  <div className="text-2xl font-bold">1,200+</div>
-                  <div className="text-white/60">Projects</div>
-                </div>
-                <div className="rounded-xl bg-white/5 border border-white/10 p-4">
-                  <div className="text-2xl font-bold">500+</div>
-                  <div className="text-white/60">Clients</div>
-                </div>
-              </div>
-            </div>
+          <div className="relative aspect-[4/5] w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl">
+            <Image
+              src={`${images.aboutTeam}?auto=format&fit=crop&w=1200&q=80`}
+              alt="Speedmax engineering and consulting team"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/30 via-transparent to-transparent" />
           </div>
-          <div className="absolute -bottom-6 -right-6 hidden md:flex h-32 w-32 rounded-2xl bg-brand-600 text-white items-center justify-center text-center p-4 shadow-xl">
-            <div>
-              <div className="font-display text-lg font-bold leading-tight">100%</div>
-              <div className="text-xs leading-tight mt-1">Client Satisfaction</div>
+
+          {/* Floating badge */}
+          <div className="absolute -bottom-5 left-6 sm:left-10 right-6 sm:right-auto sm:max-w-[260px] rounded-2xl bg-navy-900 text-white p-4 shadow-2xl flex items-center gap-3">
+            <div className="h-11 w-11 rounded-xl bg-brand-600 flex items-center justify-center shrink-0">
+              <Gem className="h-5 w-5" />
+            </div>
+            <div className="text-sm leading-tight">
+              <div className="font-semibold">100% Client</div>
+              <div className="font-semibold">Satisfaction</div>
             </div>
           </div>
         </div>

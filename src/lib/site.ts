@@ -45,6 +45,7 @@ export const services = [
       "Voice and data projects",
     ],
     icon: "Cable",
+    image: "structuredCabling",
   },
   {
     slug: "system-integration",
@@ -60,6 +61,7 @@ export const services = [
       "IT consultancy and outsourcing",
     ],
     icon: "Server",
+    image: "systemIntegration",
   },
   {
     slug: "ip-pbx",
@@ -74,6 +76,7 @@ export const services = [
       "Call recording and reporting",
     ],
     icon: "PhoneCall",
+    image: "ipPbx",
   },
   {
     slug: "security-access-control",
@@ -89,6 +92,7 @@ export const services = [
       "Remote monitoring & alerts",
     ],
     icon: "ShieldCheck",
+    image: "security",
   },
   {
     slug: "collaboration",
@@ -104,6 +108,7 @@ export const services = [
       "Unified messaging",
     ],
     icon: "Users",
+    image: "collaboration",
   },
   {
     slug: "autocount",
@@ -119,6 +124,7 @@ export const services = [
       "e-Invoice setup & support",
     ],
     icon: "Calculator",
+    image: "autocount",
   },
 ];
 
