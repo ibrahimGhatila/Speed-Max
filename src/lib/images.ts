@@ -27,7 +27,7 @@ export const images = {
   // Industries — subjects per the brief (industrial park, mall, hospital,
   // school, hotel, office tower). Unsplash IDs chosen for the subject match;
   // swap individually if any one doesn't read right.
-  indManufacturing: u("photo-1518709268805-4e9042af2176"),
+  indManufacturing: u("photo-1504917595217-d4dc5ebe6122"),
   indRetail: u("photo-1481437156560-3205f6a55735"),
   indHealthcare: u("photo-1586773860418-d37222d8fce3"),
   indEducation: u("photo-1562774053-701939374585"),
