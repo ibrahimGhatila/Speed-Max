@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/site";
 import { img, type ImageKey } from "@/lib/images";
-import CtaBanner from "@/components/CtaBanner";
 import Trust from "@/components/Trust";
 
 export const metadata: Metadata = {
@@ -118,7 +117,6 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <CtaBanner />
     </>
   );
 }

@@ -7,7 +7,6 @@ import FeaturedProject from "@/components/FeaturedProject";
 import Coverage from "@/components/Coverage";
 import Quote from "@/components/Quote";
 import About from "@/components/About";
-import CtaBanner from "@/components/CtaBanner";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       <Coverage />
       <Quote />
       <About />
-      <CtaBanner />
     </>
   );
 }

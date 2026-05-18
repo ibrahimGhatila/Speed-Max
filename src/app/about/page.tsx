@@ -4,7 +4,6 @@ import Approach from "@/components/Approach";
 import Quote from "@/components/Quote";
 import Trust from "@/components/Trust";
 import Coverage from "@/components/Coverage";
-import CtaBanner from "@/components/CtaBanner";
 import { img } from "@/lib/images";
 import { site, stats } from "@/lib/site";
 
@@ -112,7 +111,6 @@ export default function AboutPage() {
       <Approach />
       <Quote />
       <Coverage />
-      <CtaBanner />
     </>
   );
 }
