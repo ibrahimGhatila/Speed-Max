@@ -35,8 +35,8 @@ export default function Coverage() {
           </div>
 
           {/* Right — Malaysia map */}
-          <div className="lg:col-span-7 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[460px]" style={{ aspectRatio: "1 / 1" }}>
+          <div className="lg:col-span-7 flex justify-center lg:justify-start">
+            <div className="relative w-full max-w-[480px]" style={{ aspectRatio: "1 / 1" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={MAP_SRC}
