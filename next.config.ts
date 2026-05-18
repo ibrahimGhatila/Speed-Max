@@ -11,6 +11,7 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "albarqsmartsystems.com" },
       { protocol: "https", hostname: "vizito.eu" },
       { protocol: "https", hostname: "eu-images.contentstack.com" },
+      { protocol: "https", hostname: "speedmax.my" },
     ],
   },
 };
