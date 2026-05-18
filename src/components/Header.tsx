@@ -50,7 +50,7 @@ export default function Header() {
           </a>
           <Link
             href="/contact"
-            className="btn-lift inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 text-[14px] font-semibold rounded-full hover:bg-accent-hot"
+            className="btn-lift inline-flex items-center gap-2 bg-accent text-white px-5 py-2.5 text-[14px] font-semibold hover:bg-accent-hot"
           >
             Start a project
             <Arrow />
@@ -98,7 +98,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 bg-accent text-white px-4 py-3 text-[14px] font-semibold rounded-full"
+              className="mt-2 inline-flex items-center justify-center gap-2 bg-accent text-white px-4 py-3 text-[14px] font-semibold"
             >
               Start a project
               <Arrow />

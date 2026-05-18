@@ -15,7 +15,7 @@ export default function CtaBanner() {
               Let&apos;s build something{" "}
               <span className="relative inline-block text-white">
                 that doesn&apos;t fail.
-                <span className="absolute -right-3 top-[0.15em] h-2.5 w-2.5 rounded-full bg-accent" />
+                <span className="absolute -right-3 top-[0.15em] h-2.5 w-2.5 bg-accent" />
               </span>
             </h2>
           </div>
@@ -29,14 +29,14 @@ export default function CtaBanner() {
             <div className="mt-7 flex flex-col gap-3">
               <Link
                 href="/contact"
-                className="btn-lift group inline-flex items-center justify-center gap-2.5 bg-accent text-white px-6 py-3.5 text-[14px] font-semibold rounded-full hover:bg-accent-hot"
+                className="btn-lift group inline-flex items-center justify-center gap-2.5 bg-accent text-white px-6 py-3.5 text-[14px] font-semibold hover:bg-accent-hot"
               >
                 Request site survey
                 <Arrow />
               </Link>
               <a
                 href={`tel:${site.phoneRaw}`}
-                className="inline-flex items-center justify-center gap-2 border border-white/20 bg-white/5 text-white px-6 py-3.5 text-[14px] font-semibold rounded-full tabular hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/20 bg-white/5 text-white px-6 py-3.5 text-[14px] font-semibold tabular hover:bg-white/10 transition-colors"
               >
                 {site.phone}
               </a>

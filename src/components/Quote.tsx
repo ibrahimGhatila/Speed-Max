@@ -9,7 +9,7 @@ export default function Quote() {
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10 py-20 lg:py-28">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           <div className="lg:col-span-4">
-            <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-white/10">
+            <div className="relative aspect-[4/5] overflow-hidden border border-white/10">
               <Image
                 src={img("studio", 1000, 78)}
                 alt="On site"

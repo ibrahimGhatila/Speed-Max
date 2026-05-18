@@ -22,8 +22,8 @@ export default function Hero() {
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="flex-1 mx-auto w-full max-w-[1440px] px-6 lg:px-10 pt-10 lg:pt-20 pb-10 lg:pb-14 flex flex-col justify-center">
           <div className="max-w-3xl rise">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur px-3.5 py-1.5 text-[11px] tracking-[0.16em] uppercase text-white/85 font-medium">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+            <div className="inline-flex items-center gap-3 border border-white/15 bg-white/5 backdrop-blur px-3.5 py-1.5 text-[11px] tracking-[0.16em] uppercase text-white/85 font-medium">
+              <span className="h-1.5 w-1.5 bg-accent animate-pulse" />
               Serving Malaysian businesses since 2010
             </div>
 
@@ -32,7 +32,7 @@ export default function Hero() {
               <span className="text-white/55">can&apos;t afford</span>{" "}
               <span className="relative inline-block text-accent">
                 downtime.
-                <span className="absolute -right-2 top-[0.1em] h-2 w-2 rounded-full bg-accent" />
+                <span className="absolute -right-2 top-[0.1em] h-2 w-2 bg-accent" />
               </span>
             </h1>
           </div>
@@ -45,14 +45,14 @@ export default function Hero() {
             <div className="lg:col-span-6 lg:col-start-7 flex flex-wrap items-center gap-x-5 gap-y-3">
               <Link
                 href="/contact"
-                className="btn-lift group inline-flex items-center gap-2.5 bg-accent text-white px-6 py-3 text-[14px] font-semibold rounded-full hover:bg-accent-hot"
+                className="btn-lift group inline-flex items-center gap-2.5 bg-accent text-white px-6 py-3 text-[14px] font-semibold hover:bg-accent-hot"
               >
                 Request site survey
                 <Arrow />
               </Link>
               <Link
                 href="/products"
-                className="group inline-flex items-center gap-2.5 border border-white/20 bg-white/5 backdrop-blur text-white px-6 py-3 text-[14px] font-semibold rounded-full hover:bg-white/10 transition-colors"
+                className="group inline-flex items-center gap-2.5 border border-white/20 bg-white/5 backdrop-blur text-white px-6 py-3 text-[14px] font-semibold hover:bg-white/10 transition-colors"
               >
                 View capabilities
               </Link>

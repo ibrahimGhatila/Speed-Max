@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/site";
 import { img, type ImageKey } from "@/lib/images";
-import { serviceIcons } from "./ServiceIcons";
 
 export default function Services() {
   return (
@@ -24,48 +23,37 @@ export default function Services() {
         </div>
 
         <div className="mt-12 lg:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-          {services.map((svc) => {
-            const Icon = serviceIcons[svc.slug] ?? serviceIcons["structured-cabling"];
-            return (
-              <Link
-                key={svc.slug}
-                href={`/products#${svc.slug}`}
-                className="card-hover group relative overflow-hidden rounded-xl bg-ink-soft/50 border border-white/8 hover:border-white/20 transition-colors"
-              >
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={img(svc.image as ImageKey, 900, 75)}
-                    alt={svc.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover duotone-cool card-image"
-                  />
-                  <div className="absolute inset-0 card-overlay" />
-                  <div className="absolute top-4 left-4 right-4 flex items-start justify-between">
-                    <div className="h-9 w-9 rounded-full bg-white/10 backdrop-blur border border-white/15 flex items-center justify-center text-white">
-                      <Icon className="h-4 w-4" />
-                    </div>
-                    <div className="text-[10px] tabular tracking-[0.18em] uppercase text-white/65 mt-2.5">
-                      /{svc.number}
-                    </div>
-                  </div>
-                </div>
+          {services.map((svc) => (
+            <Link
+              key={svc.slug}
+              href={`/products#${svc.slug}`}
+              className="card-hover group relative overflow-hidden bg-ink-soft/50 border border-white/8 hover:border-white/20 transition-colors"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={img(svc.image as ImageKey, 900, 75)}
+                  alt={svc.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-cover duotone-cool card-image"
+                />
+                <div className="absolute inset-0 card-overlay" />
+              </div>
 
-                <div className="p-5 lg:p-6">
-                  <h3 className="font-display text-[18px] lg:text-[20px] text-white tracking-[-0.02em]">
-                    {svc.title}
-                  </h3>
-                  <p className="mt-1.5 text-[13px] text-white/65 leading-relaxed">
-                    {svc.short}
-                  </p>
-                  <div className="mt-4 flex items-center gap-2 text-[12px] font-medium text-accent">
-                    Read capability
-                    <ArrowRight />
-                  </div>
+              <div className="p-5 lg:p-6">
+                <h3 className="font-display text-[18px] lg:text-[20px] text-white tracking-[-0.02em]">
+                  {svc.title}
+                </h3>
+                <p className="mt-1.5 text-[13px] text-white/65 leading-relaxed">
+                  {svc.short}
+                </p>
+                <div className="mt-4 flex items-center gap-2 text-[12px] font-medium text-accent">
+                  Read capability
+                  <ArrowRight />
                 </div>
-              </Link>
-            );
-          })}
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>

@@ -9,7 +9,7 @@ export default function About() {
       <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-line">
+            <div className="relative aspect-[4/5] overflow-hidden border border-line">
               <Image
                 src={img("team", 1200, 80)}
                 alt="Speedmax engineering team"

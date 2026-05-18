@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/site";
 import { img, type ImageKey } from "@/lib/images";
-import { serviceIcons } from "@/components/ServiceIcons";
 import CtaBanner from "@/components/CtaBanner";
 import Trust from "@/components/Trust";
 
@@ -56,7 +55,6 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-[1440px] px-6 lg:px-10 space-y-20 lg:space-y-28">
           {services.map((svc, i) => {
             const reverse = i % 2 === 1;
-            const Icon = serviceIcons[svc.slug] ?? serviceIcons["structured-cabling"];
             return (
               <article
                 id={svc.slug}
@@ -64,7 +62,7 @@ export default function ProductsPage() {
                 className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start scroll-mt-28"
               >
                 <div className={`lg:col-span-6 ${reverse ? "lg:order-2" : ""}`}>
-                  <div className="relative aspect-[5/6] rounded-xl overflow-hidden border border-line">
+                  <div className="relative aspect-[5/6] overflow-hidden border border-line">
                     <Image
                       src={img(svc.image as ImageKey, 1400, 80)}
                       alt={svc.title}
@@ -73,14 +71,6 @@ export default function ProductsPage() {
                       className="object-cover duotone-cool"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/55 via-transparent to-transparent" />
-                    <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
-                      <div className="h-10 w-10 rounded-full bg-white/10 backdrop-blur border border-white/15 flex items-center justify-center text-white">
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <div className="text-[10px] tabular tracking-[0.18em] uppercase text-white/70 mt-3">
-                        /{svc.number}
-                      </div>
-                    </div>
                   </div>
                 </div>
 

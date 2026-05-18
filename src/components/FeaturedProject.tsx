@@ -18,7 +18,7 @@ export default function FeaturedProject() {
 
         <article className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           <div className="lg:col-span-8 relative">
-            <div className="relative aspect-[16/10] lg:aspect-[16/9] overflow-hidden rounded-xl border border-white/10">
+            <div className="relative aspect-[16/10] lg:aspect-[16/9] overflow-hidden border border-white/10">
               <Image
                 src={img("featuredProject", 2000, 80)}
                 alt={`${featured.client} — ${featured.scope}`}

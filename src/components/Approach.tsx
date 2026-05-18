@@ -20,7 +20,7 @@ export default function Approach() {
           </div>
         </div>
 
-        <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-xl overflow-hidden">
+        <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 overflow-hidden">
           {approach.map((a, i) => (
             <div
               key={a.number}
@@ -43,7 +43,7 @@ export default function Approach() {
                 </p>
               </div>
               {i < approach.length - 1 && (
-                <span className="hidden md:block absolute top-1/2 -right-1.5 w-3.5 h-3.5 rounded-full bg-accent border-[3px] border-ink" />
+                <span className="hidden md:block absolute top-1/2 -right-1.5 w-3.5 h-3.5 bg-accent border-[3px] border-ink" />
               )}
             </div>
           ))}

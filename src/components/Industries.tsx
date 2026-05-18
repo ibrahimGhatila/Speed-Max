@@ -26,7 +26,7 @@ export default function Industries() {
           {industries.map((ind) => (
             <article
               key={ind.slug}
-              className="card-hover group relative aspect-[5/6] rounded-xl overflow-hidden border border-line"
+              className="card-hover group relative aspect-[5/6] overflow-hidden border border-line"
             >
               <Image
                 src={img(ind.image as ImageKey, 900, 75)}

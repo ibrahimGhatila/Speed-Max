@@ -37,7 +37,7 @@ export default function AboutPage() {
               <span className="text-white/55">of</span>{" "}
               <span className="relative inline-block text-white">
                 quiet work.
-                <span className="absolute -right-2.5 top-[0.15em] h-2.5 w-2.5 rounded-full bg-accent" />
+                <span className="absolute -right-2.5 top-[0.15em] h-2.5 w-2.5 bg-accent" />
               </span>
             </h1>
           </div>
@@ -59,7 +59,7 @@ export default function AboutPage() {
       <section className="bg-paper py-20 lg:py-28">
         <div className="mx-auto max-w-[1440px] px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           <div className="lg:col-span-5">
-            <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-line">
+            <div className="relative aspect-[4/5] overflow-hidden border border-line">
               <Image
                 src={img("team", 1400, 80)}
                 alt="Speedmax team"

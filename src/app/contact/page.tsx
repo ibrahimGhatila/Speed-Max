@@ -79,7 +79,7 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="btn-lift mt-12 inline-flex items-center gap-3 bg-accent text-white px-7 py-4 text-[15px] font-semibold rounded-full hover:bg-accent-hot"
+                className="btn-lift mt-12 inline-flex items-center gap-3 bg-accent text-white px-7 py-4 text-[15px] font-semibold hover:bg-accent-hot"
               >
                 Send brief
                 <Arrow />
