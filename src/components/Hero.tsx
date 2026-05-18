@@ -22,12 +22,7 @@ export default function Hero() {
       <div className="relative z-10 flex-1 flex flex-col">
         <div className="flex-1 mx-auto w-full max-w-[1440px] px-6 lg:px-10 pt-10 lg:pt-20 pb-10 lg:pb-14 flex flex-col justify-center">
           <div className="max-w-3xl rise">
-            <div className="inline-flex items-center gap-3 border border-white/15 bg-white/5 backdrop-blur px-3.5 py-1.5 text-[11px] tracking-[0.16em] uppercase text-white/85 font-medium">
-              <span className="h-1.5 w-1.5 bg-accent animate-pulse" />
-              Serving Malaysian businesses since 2010
-            </div>
-
-            <h1 className="mt-7 font-display text-[34px] sm:text-[44px] lg:text-[60px] xl:text-[72px] text-white max-w-3xl">
+            <h1 className="font-display text-[34px] sm:text-[44px] lg:text-[60px] xl:text-[72px] text-white max-w-3xl">
               Network infrastructure for businesses that{" "}
               <span className="text-white/55">can&apos;t afford</span>{" "}
               <span className="relative inline-block text-accent">
@@ -37,26 +32,20 @@ export default function Hero() {
             </h1>
           </div>
 
-          <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-10 items-end rise rise-2">
-            <p className="lg:col-span-5 text-[15px] lg:text-[16px] leading-[1.55] text-white/80 max-w-md">
-              Structured cabling, networks, IP telephony, security and AutoCount —
-              designed, installed and maintained by one accountable team.
-            </p>
-            <div className="lg:col-span-6 lg:col-start-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <Link
-                href="/contact"
-                className="btn-lift group inline-flex items-center gap-2.5 bg-accent text-white px-6 py-3 text-[14px] font-semibold hover:bg-accent-hot"
-              >
-                Request site survey
-                <Arrow />
-              </Link>
-              <Link
-                href="/products"
-                className="group inline-flex items-center gap-2.5 border border-white/20 bg-white/5 backdrop-blur text-white px-6 py-3 text-[14px] font-semibold hover:bg-white/10 transition-colors"
-              >
-                View capabilities
-              </Link>
-            </div>
+          <div className="mt-10 lg:mt-12 flex flex-wrap items-center gap-x-5 gap-y-3 rise rise-2">
+            <Link
+              href="/contact"
+              className="btn-lift group inline-flex items-center gap-2.5 bg-accent text-white px-6 py-3 text-[14px] font-semibold hover:bg-accent-hot"
+            >
+              Request site survey
+              <Arrow />
+            </Link>
+            <Link
+              href="/products"
+              className="group inline-flex items-center gap-2.5 border border-white/20 bg-white/5 backdrop-blur text-white px-6 py-3 text-[14px] font-semibold hover:bg-white/10 transition-colors"
+            >
+              View capabilities
+            </Link>
           </div>
         </div>
 
