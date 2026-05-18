@@ -22,7 +22,7 @@ export default function Approach() {
                 {/* Watermark number */}
                 <span
                   aria-hidden="true"
-                  className="absolute -bottom-12 -right-6 lg:-bottom-16 lg:-right-8 font-display tabular leading-[0.8] text-[220px] lg:text-[280px] text-ink/[0.04] group-hover:text-ink/[0.09] transition-colors duration-700 select-none pointer-events-none"
+                  className="absolute right-4 lg:right-6 -bottom-6 lg:-bottom-8 font-display tabular leading-[0.82] text-[200px] lg:text-[240px] text-ink/[0.06] group-hover:text-ink/[0.13] transition-colors duration-700 select-none pointer-events-none"
                 >
                   {a.number}
                 </span>
