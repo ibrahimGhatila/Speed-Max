@@ -1,13 +1,15 @@
-// Curated Unsplash photos. Treated with the .duotone class for an editorial,
-// desaturated feel — never as decoration.
+// Curated Unsplash photos served via next/image. Treated for a cinematic,
+// premium-infrastructure feel via CSS filters.
 
 const u = (id: string) => `https://images.unsplash.com/${id}`;
 
 export const images = {
-  // Hero / featured — moody, cinematic
-  featuredProject: u("photo-1558494949-ef010cbdcc31"), // network cables, dramatic
-  serverInterior: u("photo-1573164574511-73c773193279"), // server room
-  studio: u("photo-1497366216548-37526070297c"), // calm modern office
+  // Hero — dramatic dark fiber/cable shot
+  heroFiber: u("photo-1558494949-ef010cbdcc31"),
+  // Featured project — server room
+  featuredProject: u("photo-1573164574230-db1d5e960238"),
+  // About / studio
+  studio: u("photo-1497366216548-37526070297c"),
   team: u("photo-1521737604893-d14cc237f11d"),
 
   // Service-specific
@@ -17,6 +19,14 @@ export const images = {
   security: u("photo-1557597774-9d273605dfa9"),
   collaboration: u("photo-1517048676732-d65bc937f952"),
   autocount: u("photo-1554224155-6726b3ff858f"),
+
+  // Industries
+  indManufacturing: u("photo-1581094794329-c8112a89af12"),
+  indRetail: u("photo-1556740738-b6a63e27c4df"),
+  indHealthcare: u("photo-1538108149393-fbbd81895907"),
+  indEducation: u("photo-1497486751825-1233686d5d80"),
+  indHospitality: u("photo-1566073771259-6a8506099945"),
+  indProfessional: u("photo-1497032628192-86f99bcd76bc"),
 };
 
 export type ImageKey = keyof typeof images;

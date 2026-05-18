@@ -1,22 +1,26 @@
 import Hero from "@/components/Hero";
-import FeaturedProject from "@/components/FeaturedProject";
+import Trust from "@/components/Trust";
 import Services from "@/components/Services";
+import Industries from "@/components/Industries";
 import Approach from "@/components/Approach";
-import About from "@/components/About";
+import FeaturedProject from "@/components/FeaturedProject";
+import Coverage from "@/components/Coverage";
 import Quote from "@/components/Quote";
-import Partners from "@/components/Partners";
+import About from "@/components/About";
 import CtaBanner from "@/components/CtaBanner";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <FeaturedProject />
+      <Trust />
       <Services />
+      <Industries />
       <Approach />
-      <About />
+      <FeaturedProject />
+      <Coverage />
       <Quote />
-      <Partners />
+      <About />
       <CtaBanner />
     </>
   );

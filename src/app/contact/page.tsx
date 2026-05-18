@@ -9,20 +9,25 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-paper">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pt-20 lg:pt-32 pb-24 lg:pb-32">
-        <div className="flex items-center justify-between text-[12px] tracking-[0.14em] uppercase text-mute">
-          <span className="tabular-nums">04 / Contact</span>
-          <span className="hidden sm:block">Replies within one working day</span>
-        </div>
-        <div className="rule mt-5" />
+    <section className="relative bg-ink-deep pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden min-h-[80vh]">
+      <div className="absolute inset-0 bg-dots opacity-30" />
+      <div className="absolute -right-32 top-0 h-[480px] w-[480px] rounded-full bg-accent/15 blur-[140px]" />
 
-        <div className="mt-12 lg:mt-20 grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
+        <div className="flex items-center justify-between text-[12px] tracking-[0.16em] uppercase text-white/55">
+          <span>04 — Contact</span>
+          <span className="hidden sm:block">
+            Replies within one working day
+          </span>
+        </div>
+        <div className="h-px bg-white/10 mt-5" />
+
+        <div className="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-7">
-            <h1 className="font-display text-[44px] sm:text-[64px] lg:text-[88px]">
+            <h1 className="font-display text-[44px] sm:text-[64px] lg:text-[96px] text-white">
               Brief us on a
               <br />
-              <span className="text-mute">project.</span>
+              <span className="text-white/55">project.</span>
             </h1>
 
             <form
@@ -31,17 +36,21 @@ export default function ContactPage() {
               encType="text/plain"
               className="mt-12 lg:mt-16 max-w-2xl"
             >
-              <Field label="Your name" name="name" required />
-              <Field label="Company" name="company" />
-              <Field label="Email" name="email" type="email" required />
-              <Field label="Phone" name="phone" type="tel" />
+              <div className="grid sm:grid-cols-2 gap-x-8">
+                <Field label="Your name" name="name" required />
+                <Field label="Company" name="company" />
+                <Field label="Email" name="email" type="email" required />
+                <Field label="Phone" name="phone" type="tel" />
+              </div>
 
-              <div className="border-b border-line py-5">
-                <label className="block eyebrow">Discipline</label>
+              <div className="border-b border-white/15 py-5">
+                <label className="block text-[11px] tracking-[0.16em] uppercase font-medium text-white/55">
+                  Discipline
+                </label>
                 <select
                   name="service"
                   defaultValue=""
-                  className="mt-3 w-full bg-transparent text-[18px] focus:outline-none border-0"
+                  className="mt-3 w-full bg-transparent text-[17px] text-white focus:outline-none [&>option]:text-black"
                 >
                   <option value="" disabled>
                     Choose a discipline
@@ -56,32 +65,34 @@ export default function ContactPage() {
                 </select>
               </div>
 
-              <div className="border-b border-line py-5">
-                <label className="block eyebrow">Brief</label>
+              <div className="border-b border-white/15 py-5">
+                <label className="block text-[11px] tracking-[0.16em] uppercase font-medium text-white/55">
+                  Brief
+                </label>
                 <textarea
                   name="message"
                   rows={5}
                   required
                   placeholder="Tell us about the site, the timeline, the constraints…"
-                  className="mt-3 w-full bg-transparent text-[18px] focus:outline-none resize-none placeholder:text-mute/60"
+                  className="mt-3 w-full bg-transparent text-[17px] text-white focus:outline-none resize-none placeholder:text-white/35"
                 />
               </div>
 
               <button
                 type="submit"
-                className="group mt-10 inline-flex items-center gap-3 bg-ink text-paper px-6 py-4 text-[14px] font-medium rounded-[2px] hover:bg-accent transition-colors"
+                className="btn-lift mt-12 inline-flex items-center gap-3 bg-accent text-white px-7 py-4 text-[15px] font-semibold rounded-full hover:bg-accent-hot"
               >
                 Send brief
                 <Arrow />
               </button>
-              <p className="mt-4 text-[12px] text-mute">
-                By submitting this form you agree to be contacted by Speedmax
-                about your enquiry. We never share details with third parties.
+              <p className="mt-4 text-[12px] text-white/45">
+                By submitting this form you agree to be contacted by
+                Speedmax about your enquiry.
               </p>
             </form>
           </div>
 
-          <aside className="lg:col-span-5 lg:pl-10 lg:border-l border-line">
+          <aside className="lg:col-span-5 lg:pl-8 lg:border-l border-white/10">
             <Block label="Studio">
               {site.address.line1}
               <br />
@@ -95,13 +106,13 @@ export default function ContactPage() {
             <Block label="Direct">
               <a
                 href={`tel:${site.phoneRaw}`}
-                className="block tabular-nums link-ul"
+                className="block tabular link-ul"
               >
                 T &nbsp; {site.phone}
               </a>
-              <span className="block tabular-nums text-ink/65 mt-1">
+              <div className="block tabular text-white/55 mt-1">
                 F &nbsp; {site.fax}
-              </span>
+              </div>
               <a
                 href={`mailto:${site.email}`}
                 className="block mt-3 link-ul"
@@ -113,7 +124,7 @@ export default function ContactPage() {
             <Block label="Hours">{site.hours}</Block>
 
             <Block label="Registration">
-              SSM &nbsp; <span className="tabular-nums">{site.ssm}</span>
+              SSM &nbsp; <span className="tabular">{site.ssm}</span>
             </Block>
 
             <Block label="Or, in real time">
@@ -145,8 +156,8 @@ function Field({
   required?: boolean;
 }) {
   return (
-    <div className="border-b border-line py-5">
-      <label className="block eyebrow">
+    <div className="border-b border-white/15 py-5">
+      <label className="block text-[11px] tracking-[0.16em] uppercase font-medium text-white/55">
         {label}
         {required && <span className="text-accent ml-1">*</span>}
       </label>
@@ -154,7 +165,7 @@ function Field({
         type={type}
         name={name}
         required={required}
-        className="mt-3 w-full bg-transparent text-[18px] focus:outline-none"
+        className="mt-3 w-full bg-transparent text-[17px] text-white focus:outline-none"
       />
     </div>
   );
@@ -168,9 +179,11 @@ function Block({
   children: React.ReactNode;
 }) {
   return (
-    <div className="border-b border-line py-6 first:border-t">
-      <div className="eyebrow">{label}</div>
-      <div className="mt-3 text-[16px] leading-relaxed text-ink/85">
+    <div className="border-b border-white/10 py-6 first:border-t">
+      <div className="text-[11px] tracking-[0.16em] uppercase font-medium text-white/55">
+        {label}
+      </div>
+      <div className="mt-3 text-[16px] leading-relaxed text-white">
         {children}
       </div>
     </div>
@@ -179,8 +192,8 @@ function Block({
 
 function Arrow() {
   return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform group-hover:translate-x-1">
-      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square" />
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

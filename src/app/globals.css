@@ -1,128 +1,174 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0a0a0a;
-  --color-ink-soft: #1c1c1c;
-  --color-paper: #fafaf9;
-  --color-paper-warm: #f5f4ee;
+  --color-ink-deep: #050a16;
+  --color-ink: #0a1428;
+  --color-ink-soft: #11203f;
+  --color-ink-line: rgba(255, 255, 255, 0.08);
+  --color-ink-line-strong: rgba(255, 255, 255, 0.14);
+
+  --color-paper: #fafafa;
+  --color-paper-warm: #f5f5f3;
   --color-line: #e5e5e5;
-  --color-line-soft: #ededed;
   --color-mute: #737373;
-  --color-mute-soft: #a3a3a3;
-  --color-accent: #dc2626;
-  --color-accent-soft: #fef2f2;
+
+  --color-accent: #e11d2a;
+  --color-accent-hot: #f23341;
+  --color-accent-soft: rgba(225, 29, 42, 0.12);
 
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    Segoe UI, Roboto, sans-serif;
+    "Segoe UI", Roboto, sans-serif;
 }
 
 :root {
-  color-scheme: light;
-  --radius: 4px;
+  color-scheme: dark;
 }
 
 html,
 body {
-  background: var(--color-paper);
-  color: var(--color-ink);
+  background: var(--color-ink);
+  color: #ffffff;
 }
 
 body {
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "ss02", "cv11";
-  font-variant-numeric: tabular-nums;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5 {
   letter-spacing: -0.025em;
   font-feature-settings: "ss01", "cv11";
 }
 
 .font-display {
-  letter-spacing: -0.04em;
-  line-height: 0.96;
-  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  font-weight: 700;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
 }
 
 .eyebrow {
   font-size: 12px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--color-mute);
+  color: var(--color-accent);
 }
 
-.rule {
-  height: 1px;
-  background: var(--color-line);
-  width: 100%;
+.eyebrow-mute {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.rule-ink {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.12);
-  width: 100%;
+/* Gradients used over hero / feature imagery */
+.hero-overlay {
+  background:
+    linear-gradient(90deg, var(--color-ink-deep) 0%, rgba(10, 20, 40, 0.8) 35%, rgba(10, 20, 40, 0.2) 65%, rgba(10, 20, 40, 0) 100%),
+    linear-gradient(180deg, rgba(5, 10, 22, 0.4) 0%, transparent 30%, rgba(5, 10, 22, 0.7) 100%);
 }
 
-/* Subtle reveal */
+.card-overlay {
+  background:
+    linear-gradient(180deg, rgba(10, 20, 40, 0) 35%, rgba(5, 10, 22, 0.85) 100%);
+}
+
+.industry-overlay {
+  background:
+    linear-gradient(180deg, rgba(5, 10, 22, 0.2) 0%, rgba(5, 10, 22, 0.9) 100%);
+}
+
+/* Section bands */
+.bg-ink {
+  background: var(--color-ink);
+}
+.bg-ink-deep {
+  background: var(--color-ink-deep);
+}
+
+/* Subtle dotted background for emphasis sections */
+.bg-dots {
+  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Premium reveal */
 @keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.rise {
-  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-.rise-2 {
-  animation-delay: 0.08s;
-}
-.rise-3 {
-  animation-delay: 0.16s;
-}
+.rise { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-2 { animation-delay: 0.1s; }
+.rise-3 { animation-delay: 0.2s; }
+.rise-4 { animation-delay: 0.3s; }
 
-/* Marquee for partners */
+/* Marquee for partner strip */
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 .marquee-track {
-  animation: marquee 40s linear infinite;
+  animation: marquee 50s linear infinite;
+  will-change: transform;
 }
 
-/* Underline link */
+/* Image treatments */
+.duotone {
+  filter: contrast(1.05) saturate(0.92);
+}
+.duotone-cool {
+  filter: contrast(1.08) saturate(0.85) hue-rotate(-6deg);
+}
+
+/* Link underline */
 .link-ul {
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0 100%;
   background-repeat: no-repeat;
   background-size: 100% 1px;
-  transition: background-size 0.4s ease;
+  transition: background-size 0.35s ease;
 }
-.link-ul:hover {
-  background-size: 0 1px;
+.link-ul:hover { background-size: 0 1px; }
+
+/* Button hover lift */
+.btn-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.2s ease;
+}
+.btn-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px -10px rgba(225, 29, 42, 0.45);
 }
 
-/* Photo treatment */
-.duotone {
-  filter: grayscale(0.35) contrast(1.04);
+/* Service card hover */
+.card-hover {
+  transition: transform 0.35s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+.card-hover:hover .card-image {
+  transform: scale(1.04);
+}
+.card-image {
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 ::selection {
-  background: var(--color-ink);
-  color: var(--color-paper);
+  background: var(--color-accent);
+  color: #fff;
 }
+
+/* Light section override */
+.section-light {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+.section-light .eyebrow-mute { color: var(--color-mute); }

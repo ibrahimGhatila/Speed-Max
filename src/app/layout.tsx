@@ -8,17 +8,17 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.speedmax.my"),
   title: {
-    default: "Speedmax — Network infrastructure, engineered for uptime",
+    default: "Speedmax — Network infrastructure for businesses that can't afford downtime",
     template: "%s — Speedmax",
   },
   description:
-    "Since 2010, Speedmax has designed, built and maintained the cabling, networks, telephony and accounting systems that keep Malaysian businesses running.",
+    "Since 2010, Speedmax has built the cabling, networks, telephony, security and accounting systems Malaysian businesses depend on.",
   openGraph: {
     title: "Speedmax",
     description:
@@ -35,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-paper text-ink">
+      <body className="min-h-full flex flex-col bg-ink text-white">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

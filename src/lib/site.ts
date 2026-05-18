@@ -24,9 +24,9 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Index", href: "/" },
+  { label: "Home", href: "/" },
   { label: "Capabilities", href: "/products" },
-  { label: "Studio", href: "/about" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -35,14 +35,14 @@ export const services = [
     slug: "structured-cabling",
     number: "01",
     title: "Structured Cabling",
-    short: "Cat6A and fibre, from blueprint to certified channel test.",
+    short: "Cat6A and fibre, designed and certified to standard.",
     description:
-      "We design, install and certify low-voltage cabling infrastructure for offices, warehouses and data centres — engineered to today's demands and tomorrow's bandwidth.",
+      "Design, installation and certification of structured cabling for offices, warehouses and data centres — engineered to meet today's demands and tomorrow's bandwidth.",
     specs: [
-      "Cat5e / Cat6 / Cat6A / OS2 fibre",
+      "Cat5e · Cat6 · Cat6A · OS2 fibre",
       "Permanent-link & channel certification",
-      "Single-site and multi-site rollouts",
-      "Containment, pathway & dressing",
+      "Single & multi-site rollouts",
+      "Containment & cable management",
     ],
     image: "structuredCabling",
   },
@@ -50,24 +50,24 @@ export const services = [
     slug: "system-integration",
     number: "02",
     title: "System Integration",
-    short: "Servers, switching and storage, working as one system.",
+    short: "Servers, switching and storage, working as one.",
     description:
-      "From bare-metal racking to Microsoft 365 migration, we bring the hardware, networks and software your team relies on into a single, supportable stack.",
+      "From bare-metal racking to Microsoft 365 migration, we bring hardware, networks and software into a single, supportable stack.",
     specs: [
       "Server, storage & virtualisation",
-      "L2/L3 networking, VLANs, Wi-Fi 6",
+      "L2/L3 networking & Wi-Fi 6",
       "Microsoft 365 & email migration",
       "Documentation & handover",
     ],
     image: "systemIntegration",
   },
   {
-    slug: "ip-pbx",
+    slug: "ip-telephony",
     number: "03",
     title: "IP Telephony",
-    short: "Modern PBX with SIP trunks — on-prem or cloud.",
+    short: "Modern PBX and SIP — on-prem or cloud.",
     description:
-      "IP telephony platforms that scale with your team. Mobile extensions, call recording, IVR and reporting, integrated cleanly with your existing carrier.",
+      "IP telephony that scales with your team. Mobile extensions, call recording, IVR and reporting, integrated cleanly with your existing carrier.",
     specs: [
       "Yeastar · Grandstream · 3CX",
       "SIP trunk integration",
@@ -82,7 +82,7 @@ export const services = [
     title: "Security & Access",
     short: "IP surveillance and access control, monitored 24/7.",
     description:
-      "Designed-in security, not bolted-on. IP cameras, access-controlled doors and visitor management — auditable, remote, and ready for incident response.",
+      "Designed-in security, not bolted-on. IP cameras, access-controlled doors and visitor management — auditable and remotely supervised.",
     specs: [
       "Hikvision · Dahua · Uniview",
       "Card & biometric access",
@@ -95,9 +95,9 @@ export const services = [
     slug: "collaboration",
     number: "05",
     title: "Collaboration Rooms",
-    short: "Meeting rooms ready for Teams, Zoom and Google Meet.",
+    short: "Meeting rooms ready for Teams, Zoom and Meet.",
     description:
-      "Conference-room AV that just works. Cameras, mics, displays and wireless presentation engineered to remove the awkward start of every meeting.",
+      "Conference-room AV that just works — cameras, mics, displays and wireless presentation engineered to remove the awkward start of every meeting.",
     specs: [
       "Microsoft Teams Rooms",
       "Conference-room audio & video",
@@ -110,7 +110,7 @@ export const services = [
     slug: "autocount",
     number: "06",
     title: "AutoCount Suite",
-    short: "Accounting, POS and e-Invoice — certified AutoCount partner.",
+    short: "Accounting, POS and e-Invoice — certified partner.",
     description:
       "We implement and support AutoCount Accounting, Inventory, POS, Payroll and e-Invoice for Malaysian SMEs — from licensing to month-end training.",
     specs: [
@@ -143,19 +143,28 @@ export const partners = [
   "HPE Aruba",
 ];
 
+export const industries = [
+  { slug: "manufacturing", title: "Manufacturing", body: "Plant networks and OT cabling, designed for uptime.", image: "indManufacturing" },
+  { slug: "retail", title: "Retail & F&B", body: "POS, Wi-Fi and CCTV across multi-outlet footprints.", image: "indRetail" },
+  { slug: "healthcare", title: "Healthcare", body: "Clinic and hospital networks with strict reliability needs.", image: "indHealthcare" },
+  { slug: "education", title: "Education", body: "Campus Wi-Fi, classroom AV and CCTV.", image: "indEducation" },
+  { slug: "hospitality", title: "Hospitality", box: true, body: "Hotel guest networks, IPTV and access control.", image: "indHospitality" },
+  { slug: "professional", title: "Professional Services", body: "Office networks, telephony and Microsoft 365.", image: "indProfessional" },
+];
+
 export const approach = [
   {
-    number: "I",
+    number: "01",
     title: "Survey",
-    body: "A site visit and brief — on-site or virtual — to understand the building, the team and the workload. We leave with measurements, photos and a clear scope.",
+    body: "A site visit and brief — on-site or virtual. We leave with measurements, photographs and a clear scope of work.",
   },
   {
-    number: "II",
+    number: "02",
     title: "Design",
-    body: "A fixed-price proposal, bill of materials and floor plan. You see exactly what is being installed, where, by when, and at what cost.",
+    body: "A fixed-price proposal with bill of materials and floor plan. You see exactly what is being installed, where, by when, and at what cost.",
   },
   {
-    number: "III",
+    number: "03",
     title: "Deliver",
     body: "Installation by our own engineers, certified to standard, documented in a handover pack, and supported on a response SLA you choose.",
   },
@@ -171,3 +180,11 @@ export const featured = {
   attribution: "IT Director, manufacturing client",
   image: "featuredProject",
 };
+
+export const coverage = [
+  { region: "Johor", note: "HQ + field engineering" },
+  { region: "Klang Valley", note: "Project teams" },
+  { region: "Penang", note: "Partner network" },
+  { region: "East Coast", note: "On request" },
+  { region: "Singapore", note: "Cross-border projects" },
+];
