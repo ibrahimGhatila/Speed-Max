@@ -7,6 +7,11 @@ export const images = {
   // Hero — keep
   heroFiber: u("photo-1558494949-ef010cbdcc31"),
 
+  // Inner-page heroes (same dark-infrastructure feel, distinct subjects)
+  heroAbout: u("photo-1597733336794-12d05021d510"),
+  heroCapabilities: u("photo-1573164713714-d95e436ab8d6"),
+  heroContact: u("photo-1551703599-6b3e8379aa8d"),
+
   // Featured / about / studio
   featuredProject: u("photo-1518770660439-4636190af475"),
   studio: u("photo-1497366811353-6870744d04b2"),
