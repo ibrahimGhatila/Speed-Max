@@ -15,30 +15,43 @@ export default function Approach() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-4 lg:gap-5">
+        <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-px bg-line border border-line overflow-hidden">
           {approach.map((a, i) => (
             <Reveal key={a.number} delay={120 + i * 120} className="h-full">
-              <article className="group relative h-full min-h-[300px] lg:min-h-[340px] overflow-hidden border border-line bg-white transition-all duration-500 hover:border-ink/25 hover:shadow-[0_24px_60px_-30px_rgba(10,20,40,0.18)] hover:-translate-y-1 flex flex-col">
-                {/* Watermark number */}
+              <article className="group relative h-full min-h-[300px] lg:min-h-[340px] bg-white overflow-hidden flex flex-col cursor-default transition-colors duration-500 hover:bg-paper-warm/40">
+                {/* Top accent line — slides in on hover */}
+                <span className="absolute top-0 left-0 h-[2px] w-0 bg-accent group-hover:w-full transition-[width] duration-700 ease-[cubic-bezier(0.22,0.61,0.36,1)]" />
+
+                {/* Watermark number — thick, very faint, lightly grows on hover */}
                 <span
                   aria-hidden="true"
-                  className="absolute right-4 lg:right-6 -bottom-6 lg:-bottom-8 font-display tabular leading-[0.82] text-[200px] lg:text-[240px] text-ink/[0.06] group-hover:text-ink/[0.13] transition-colors duration-700 select-none pointer-events-none"
+                  className="absolute right-4 lg:right-6 -bottom-6 lg:-bottom-8 tabular leading-[0.82] font-extrabold text-[210px] lg:text-[260px] tracking-[-0.06em] text-ink/[0.035] group-hover:text-ink/[0.08] group-hover:scale-[1.04] origin-bottom-right transition-all duration-700 ease-out select-none pointer-events-none"
                 >
                   {a.number}
                 </span>
 
-                {/* Top phase label */}
-                <div className="relative p-8 lg:p-10 flex items-baseline justify-between">
+                {/* Top row: phase label + arrow */}
+                <div className="relative p-8 lg:p-10 flex items-start justify-between">
                   <span className="text-[10px] tracking-[0.18em] uppercase font-medium text-mute">
                     Phase {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="h-1.5 w-1.5 bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="h-8 w-8 flex items-center justify-center border border-line bg-white/0 text-ink/40 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 group-hover:border-accent group-hover:text-accent transition-all duration-500">
+                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 11L11 3M11 3H4M11 3V10"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
                 </div>
 
-                {/* Bottom content, pushed down */}
+                {/* Bottom content, anchored down */}
                 <div className="relative mt-auto px-8 lg:px-10 pb-8 lg:pb-10">
-                  <div className="h-px w-8 bg-accent transition-all duration-500 group-hover:w-16" />
-                  <h3 className="mt-5 font-display text-[22px] lg:text-[26px] text-ink tracking-[-0.025em]">
+                  <div className="h-px w-8 bg-accent transition-all duration-500 group-hover:w-20" />
+                  <h3 className="mt-5 font-display text-[22px] lg:text-[26px] text-ink tracking-[-0.025em] group-hover:translate-x-1 transition-transform duration-500">
                     {a.title}
                   </h3>
                   <p className="mt-3 text-[13px] lg:text-[14px] text-ink/65 leading-[1.6] max-w-sm">
