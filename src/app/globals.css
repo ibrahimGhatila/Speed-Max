@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy-950: #070b1a;
+  --color-navy-900: #0b1224;
+  --color-navy-800: #111a35;
+  --color-navy-700: #182347;
+  --color-navy-600: #1e2a52;
+  --color-navy-500: #2a3a6b;
+
+  --color-brand-50: #fef2f3;
+  --color-brand-100: #fee2e4;
+  --color-brand-200: #fcccd0;
+  --color-brand-300: #f9a3aa;
+  --color-brand-400: #f56b78;
+  --color-brand-500: #ec3a4c;
+  --color-brand-600: #e11d2a;
+  --color-brand-700: #bd1622;
+  --color-brand-800: #9c1620;
+  --color-brand-900: #821820;
+
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: #ffffff;
+  color: #0b1224;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Brand underline used on section headings */
+.brand-underline {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.35rem;
+}
+.brand-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 64%;
+  background: var(--color-brand-600);
+  border-radius: 999px;
+}
+
+/* Subtle grid background for dark sections */
+.bg-grid {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-radial-brand {
+  background:
+    radial-gradient(60% 60% at 80% 20%, rgba(225, 29, 42, 0.18) 0%, transparent 70%),
+    radial-gradient(50% 60% at 10% 100%, rgba(225, 29, 42, 0.12) 0%, transparent 70%);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out both;
+}
