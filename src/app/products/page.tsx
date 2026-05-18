@@ -17,33 +17,30 @@ export default function ProductsPage() {
   return (
     <>
       {/* Page hero */}
-      <section className="relative bg-ink-deep pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative bg-ink-deep -mt-20 pt-32 pb-16 lg:pt-44 lg:pb-24 overflow-hidden min-h-[80svh] flex flex-col justify-center">
         <div className="absolute inset-0 bg-dots opacity-30" />
-        <div className="absolute -right-32 top-0 h-[420px] w-[420px] rounded-full bg-accent/20 blur-[140px]" />
-        <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
-          <div className="flex items-center justify-between text-[12px] tracking-[0.16em] uppercase text-white/55">
+        <div className="absolute -right-32 top-0 h-[380px] w-[380px] rounded-full bg-accent/20 blur-[140px]" />
+        <div className="relative mx-auto max-w-[1440px] w-full px-6 lg:px-10">
+          <div className="flex items-center justify-between text-[11px] tracking-[0.16em] uppercase text-white/55">
             <span>02 — Capabilities</span>
             <span className="hidden sm:block">Six disciplines</span>
           </div>
-          <div className="h-px bg-white/10 mt-5" />
+          <div className="h-px bg-white/10 mt-4" />
 
-          <div className="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-10">
-            <h1 className="lg:col-span-10 font-display text-[44px] sm:text-[64px] lg:text-[104px] text-white">
-              Everything we
-              <br />
-              <span className="text-white/55">design, install</span>
-              <br />
-              <span className="text-white">and maintain.</span>
+          <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-10">
+            <h1 className="lg:col-span-10 font-display text-[34px] sm:text-[44px] lg:text-[64px] xl:text-[76px] text-white">
+              Everything we{" "}
+              <span className="text-white/55">design, install and maintain.</span>
             </h1>
           </div>
 
-          <div className="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-10">
-            <p className="lg:col-span-5 text-[18px] lg:text-[20px] leading-[1.5] text-white/80">
+          <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-10">
+            <p className="lg:col-span-5 text-[15px] lg:text-[16px] leading-[1.55] text-white/80">
               One contractor for the cabling, networks and systems that
               underpin a working business. No hand-offs. No finger-pointing.
               One accountable team.
             </p>
-            <div className="lg:col-span-4 lg:col-start-9 lg:pl-8 lg:border-l border-white/10 text-[14px] text-white/65 leading-relaxed">
+            <div className="lg:col-span-4 lg:col-start-9 lg:pl-7 lg:border-l border-white/10 text-[13px] text-white/65 leading-relaxed">
               Every engagement begins with a free site survey and ends with a
               certified, documented handover. All six disciplines are
               delivered in-house.
@@ -55,8 +52,8 @@ export default function ProductsPage() {
       <Trust />
 
       {/* Service detail sections */}
-      <section className="bg-ink py-20 lg:py-32">
-        <div className="mx-auto max-w-[1440px] px-6 lg:px-10 space-y-28 lg:space-y-44">
+      <section className="bg-paper py-16 lg:py-24">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-10 space-y-20 lg:space-y-28">
           {services.map((svc, i) => {
             const reverse = i % 2 === 1;
             const Icon = serviceIcons[svc.slug] ?? serviceIcons["structured-cabling"];
@@ -64,10 +61,10 @@ export default function ProductsPage() {
               <article
                 id={svc.slug}
                 key={svc.slug}
-                className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start scroll-mt-28"
+                className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start scroll-mt-28"
               >
                 <div className={`lg:col-span-6 ${reverse ? "lg:order-2" : ""}`}>
-                  <div className="relative aspect-[5/6] rounded-2xl overflow-hidden border border-white/8">
+                  <div className="relative aspect-[5/6] rounded-xl overflow-hidden border border-line">
                     <Image
                       src={img(svc.image as ImageKey, 1400, 80)}
                       alt={svc.title}
@@ -75,38 +72,40 @@ export default function ProductsPage() {
                       sizes="(min-width: 1024px) 50vw, 100vw"
                       className="object-cover duotone-cool"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/60 via-transparent to-transparent" />
-                    <div className="absolute top-6 left-6 right-6 flex items-start justify-between">
-                      <div className="h-12 w-12 rounded-full bg-white/10 backdrop-blur border border-white/15 flex items-center justify-center text-white">
-                        <Icon className="h-5 w-5" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/55 via-transparent to-transparent" />
+                    <div className="absolute top-5 left-5 right-5 flex items-start justify-between">
+                      <div className="h-10 w-10 rounded-full bg-white/10 backdrop-blur border border-white/15 flex items-center justify-center text-white">
+                        <Icon className="h-4 w-4" />
                       </div>
-                      <div className="text-[11px] tabular tracking-[0.18em] uppercase text-white/65 mt-3.5">
+                      <div className="text-[10px] tabular tracking-[0.18em] uppercase text-white/70 mt-3">
                         /{svc.number}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className={`lg:col-span-6 ${reverse ? "lg:order-1" : ""} lg:pt-4`}>
-                  <div className="eyebrow">
+                <div className={`lg:col-span-6 ${reverse ? "lg:order-1" : ""} lg:pt-2`}>
+                  <div className="text-[11px] tracking-[0.18em] uppercase font-medium text-accent">
                     Capability · {svc.number}
                   </div>
-                  <h2 className="mt-6 font-display text-[40px] sm:text-[56px] lg:text-[72px] text-white">
+                  <h2 className="mt-4 font-display text-[30px] sm:text-[36px] lg:text-[48px] text-ink">
                     {svc.title}
                   </h2>
-                  <p className="mt-6 text-[18px] lg:text-[20px] text-white/85 leading-[1.55] max-w-lg">
+                  <p className="mt-5 text-[16px] lg:text-[17px] text-ink/75 leading-[1.55] max-w-lg">
                     {svc.description}
                   </p>
 
-                  <div className="mt-12 max-w-lg">
-                    <div className="eyebrow-mute">What&apos;s included</div>
-                    <ul className="mt-5">
+                  <div className="mt-9 max-w-lg">
+                    <div className="text-[10px] tracking-[0.18em] uppercase font-medium text-mute">
+                      What&apos;s included
+                    </div>
+                    <ul className="mt-4">
                       {svc.specs.map((s, idx) => (
                         <li
                           key={s}
-                          className="flex items-baseline gap-5 py-4 border-b border-white/10 first:border-t text-[15px] text-white"
+                          className="flex items-baseline gap-5 py-3 border-b border-line first:border-t text-[14px] text-ink"
                         >
-                          <span className="text-[11px] tabular text-white/40 w-6 shrink-0">
+                          <span className="text-[10px] tabular w-6 shrink-0 text-mute">
                             {String(idx + 1).padStart(2, "0")}
                           </span>
                           <span>{s}</span>
@@ -117,7 +116,7 @@ export default function ProductsPage() {
 
                   <Link
                     href="/contact"
-                    className="mt-12 inline-flex items-center gap-3 text-[14px] font-semibold text-white link-ul"
+                    className="mt-9 inline-flex items-center gap-2.5 text-[13px] font-semibold text-ink link-ul"
                   >
                     Brief us on a {svc.title.toLowerCase()} project
                     <Arrow />

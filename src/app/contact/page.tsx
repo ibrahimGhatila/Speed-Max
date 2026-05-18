@@ -9,24 +9,23 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="relative bg-ink-deep pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden min-h-[80vh]">
+    <section className="relative bg-ink-deep -mt-20 pt-32 pb-20 lg:pt-40 lg:pb-24 overflow-hidden min-h-[100svh]">
       <div className="absolute inset-0 bg-dots opacity-30" />
-      <div className="absolute -right-32 top-0 h-[480px] w-[480px] rounded-full bg-accent/15 blur-[140px]" />
+      <div className="absolute -right-32 top-0 h-[400px] w-[400px] rounded-full bg-accent/15 blur-[140px]" />
 
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
-        <div className="flex items-center justify-between text-[12px] tracking-[0.16em] uppercase text-white/55">
+        <div className="flex items-center justify-between text-[11px] tracking-[0.16em] uppercase text-white/55">
           <span>04 — Contact</span>
           <span className="hidden sm:block">
             Replies within one working day
           </span>
         </div>
-        <div className="h-px bg-white/10 mt-5" />
+        <div className="h-px bg-white/10 mt-4" />
 
-        <div className="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-10 lg:gap-14">
           <div className="lg:col-span-7">
-            <h1 className="font-display text-[44px] sm:text-[64px] lg:text-[96px] text-white">
-              Brief us on a
-              <br />
+            <h1 className="font-display text-[34px] sm:text-[44px] lg:text-[60px] xl:text-[68px] text-white">
+              Brief us on a{" "}
               <span className="text-white/55">project.</span>
             </h1>
 
@@ -34,7 +33,7 @@ export default function ContactPage() {
               action={`mailto:${site.email}`}
               method="post"
               encType="text/plain"
-              className="mt-12 lg:mt-16 max-w-2xl"
+              className="mt-10 lg:mt-12 max-w-2xl"
             >
               <div className="grid sm:grid-cols-2 gap-x-8">
                 <Field label="Your name" name="name" required />

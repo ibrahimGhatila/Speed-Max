@@ -44,9 +44,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .font-display {
-  letter-spacing: -0.035em;
-  line-height: 0.98;
-  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.02;
+  font-weight: 600;
 }
 
 .tabular {

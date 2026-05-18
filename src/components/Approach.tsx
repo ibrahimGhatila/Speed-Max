@@ -2,50 +2,48 @@ import { approach } from "@/lib/site";
 
 export default function Approach() {
   return (
-    <section className="relative section-light py-24 lg:py-36">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-10">
+    <section className="relative bg-ink py-20 lg:py-28">
+      <div className="absolute inset-0 bg-dots opacity-30 pointer-events-none" />
+      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
-            <div className="text-[12px] tracking-[0.16em] uppercase font-medium text-accent">
-              04 — Method
-            </div>
-            <h2 className="mt-6 font-display text-[40px] sm:text-[56px] lg:text-[80px] text-[var(--color-ink)]">
-              Three steps.
-              <br />
-              <span className="text-[var(--color-mute)]">No surprises.</span>
+            <div className="eyebrow">04 — Method</div>
+            <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[56px] text-white">
+              Three steps.{" "}
+              <span className="text-white/55">No surprises.</span>
             </h2>
           </div>
-          <div className="lg:col-span-4 lg:col-start-9 text-[16px] leading-relaxed text-[var(--color-mute)]">
-            Every Speedmax engagement follows the same disciplined sequence —
-            so you know exactly what is being delivered, when, and at what
-            cost, before the first cable is pulled.
+          <div className="lg:col-span-4 lg:col-start-9 text-[14px] leading-relaxed text-white/65">
+            Every engagement follows the same disciplined sequence — so you
+            know exactly what is being delivered, when, and at what cost,
+            before the first cable is pulled.
           </div>
         </div>
 
-        <div className="mt-16 lg:mt-24 grid md:grid-cols-3 gap-px bg-[var(--color-line)] border border-[var(--color-line)] rounded-2xl overflow-hidden">
+        <div className="mt-12 lg:mt-16 grid md:grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-xl overflow-hidden">
           {approach.map((a, i) => (
             <div
               key={a.number}
-              className="bg-[var(--color-paper)] p-8 lg:p-10 min-h-[280px] flex flex-col justify-between relative"
+              className="bg-ink p-7 lg:p-9 min-h-[220px] flex flex-col justify-between relative"
             >
               <div className="flex items-baseline justify-between">
-                <div className="font-display text-[60px] lg:text-[80px] tabular text-[var(--color-ink)] leading-none">
+                <div className="font-display text-[44px] lg:text-[60px] tabular text-white leading-none">
                   {a.number}
                 </div>
-                <span className="text-[11px] tracking-[0.18em] uppercase text-[var(--color-mute)]">
+                <span className="text-[10px] tracking-[0.18em] uppercase text-white/45">
                   Phase {i + 1}
                 </span>
               </div>
-              <div className="mt-8">
-                <h3 className="font-display text-[24px] lg:text-[28px] text-[var(--color-ink)] tracking-[-0.03em]">
+              <div className="mt-6">
+                <h3 className="font-display text-[20px] lg:text-[22px] text-white tracking-[-0.02em]">
                   {a.title}
                 </h3>
-                <p className="mt-3 text-[15px] text-[var(--color-mute)] leading-relaxed">
+                <p className="mt-2 text-[13px] text-white/65 leading-relaxed">
                   {a.body}
                 </p>
               </div>
               {i < approach.length - 1 && (
-                <span className="hidden md:block absolute top-1/2 -right-2.5 w-5 h-5 rounded-full bg-accent border-4 border-[var(--color-paper)]" />
+                <span className="hidden md:block absolute top-1/2 -right-1.5 w-3.5 h-3.5 rounded-full bg-accent border-[3px] border-ink" />
               )}
             </div>
           ))}

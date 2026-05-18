@@ -18,82 +18,91 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-ink-deep pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden">
+      <section className="relative bg-ink-deep -mt-20 pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden min-h-[80svh] flex flex-col justify-center">
         <div className="absolute inset-0 bg-dots opacity-30" />
-        <div className="absolute -left-32 top-0 h-[480px] w-[480px] rounded-full bg-accent/15 blur-[140px]" />
+        <div className="absolute -left-32 top-0 h-[400px] w-[400px] rounded-full bg-accent/15 blur-[140px]" />
 
-        <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
-          <div className="flex items-center justify-between text-[12px] tracking-[0.16em] uppercase text-white/55">
+        <div className="relative mx-auto max-w-[1440px] w-full px-6 lg:px-10">
+          <div className="flex items-center justify-between text-[11px] tracking-[0.16em] uppercase text-white/55">
             <span>03 — About</span>
             <span className="hidden sm:block tabular">
               Est. {site.foundedYear}
             </span>
           </div>
-          <div className="h-px bg-white/10 mt-5" />
+          <div className="h-px bg-white/10 mt-4" />
 
-          <div className="mt-14 lg:mt-20 grid lg:grid-cols-12 gap-10">
-            <h1 className="lg:col-span-10 font-display text-[44px] sm:text-[64px] lg:text-[104px] text-white">
-              A fourteen-year
-              <br />
-              <span className="text-white/55">record of</span>{" "}
+          <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-10">
+            <h1 className="lg:col-span-10 font-display text-[34px] sm:text-[44px] lg:text-[64px] xl:text-[72px] text-white">
+              A fourteen-year record{" "}
+              <span className="text-white/55">of</span>{" "}
               <span className="relative inline-block text-white">
                 quiet work.
-                <span className="absolute -right-3 lg:-right-4 top-[0.05em] h-3 w-3 lg:h-4 lg:w-4 rounded-full bg-accent" />
+                <span className="absolute -right-2.5 top-[0.15em] h-2.5 w-2.5 rounded-full bg-accent" />
               </span>
             </h1>
           </div>
 
-          <div className="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="lg:col-span-5">
-              <div className="relative aspect-[5/6] rounded-2xl overflow-hidden border border-white/8">
-                <Image
-                  src={img("team", 1400, 80)}
-                  alt="Speedmax team"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  className="object-cover duotone-cool"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-deep/50 via-transparent to-transparent" />
-              </div>
+          <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-10">
+            <p className="lg:col-span-5 text-[15px] lg:text-[16px] leading-[1.55] text-white/80">
+              Founded in {site.foundedYear} in Johor Bahru as a specialist
+              contractor for ICT and extra-low-voltage construction.
+            </p>
+            <div className="lg:col-span-4 lg:col-start-9 lg:pl-7 lg:border-l border-white/10 text-[13px] text-white/65 leading-relaxed">
+              We measure ourselves on what doesn&apos;t happen — no downtime,
+              no callbacks, no surprises on invoice day.
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="lg:col-span-7 lg:pt-4">
-              <p className="text-[18px] lg:text-[22px] leading-[1.55] text-white">
-                Speedmax Solutions Sdn Bhd was founded in {site.foundedYear} in
-                Johor Bahru as a specialist contractor for ICT and
-                extra-low-voltage construction. We started as a structured-
-                cabling team, and grew — deliberately — into a one-stop
-                technology partner for Malaysian businesses.
-              </p>
-              <p className="mt-6 text-[16px] text-white/70 leading-relaxed">
-                Today, our work spans cabling, networking, IP telephony,
-                security and AutoCount accounting. We design, install and
-                support every system ourselves, which means one phone
-                number when something needs attention, and one company
-                that owns the outcome.
-              </p>
-              <p className="mt-6 text-[16px] text-white/70 leading-relaxed">
-                We measure ourselves on what doesn&apos;t happen.
-              </p>
+      {/* Studio body (light) */}
+      <section className="bg-paper py-20 lg:py-28">
+        <div className="mx-auto max-w-[1440px] px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-line">
+              <Image
+                src={img("team", 1400, 80)}
+                alt="Speedmax team"
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover duotone-cool"
+              />
+            </div>
+          </div>
 
-              {/* Big stats */}
-              <div className="mt-12 border-t border-white/10">
-                <dl className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/10">
-                  {stats.map((s) => (
-                    <div key={s.label} className="py-6 first:pl-0 lg:px-5">
-                      <dd className="font-display text-[32px] lg:text-[40px] text-white tabular">
-                        {s.value}
-                        <span className="text-accent text-[0.5em] font-medium ml-1">
-                          {s.suffix}
-                        </span>
-                      </dd>
-                      <dt className="mt-1 text-[11px] tracking-[0.16em] uppercase text-white/55">
-                        {s.label}
-                      </dt>
-                    </div>
-                  ))}
-                </dl>
-              </div>
+          <div className="lg:col-span-7 lg:pt-2">
+            <div className="text-[11px] tracking-[0.18em] uppercase font-medium text-accent">
+              The studio
+            </div>
+            <p className="mt-5 text-[18px] lg:text-[20px] leading-[1.55] text-ink max-w-xl">
+              Speedmax Solutions Sdn Bhd grew — deliberately — from a
+              structured-cabling team into a one-stop technology partner for
+              Malaysian businesses.
+            </p>
+            <p className="mt-4 text-[14px] text-ink/70 leading-relaxed max-w-xl">
+              Today, our work spans cabling, networking, IP telephony,
+              security and AutoCount accounting. We design, install and
+              support every system ourselves, which means one phone number
+              when something needs attention, and one company that owns the
+              outcome.
+            </p>
+
+            <div className="mt-10 border-t border-line">
+              <dl className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-line">
+                {stats.map((s, i) => (
+                  <div key={s.label} className={`py-5 ${i === 0 ? "" : "lg:pl-5"}`}>
+                    <dd className="font-display text-[26px] lg:text-[32px] text-ink tabular">
+                      {s.value}
+                      <span className="text-accent text-[0.55em] font-medium ml-1">
+                        {s.suffix}
+                      </span>
+                    </dd>
+                    <dt className="mt-1 text-[10px] tracking-[0.18em] uppercase text-mute">
+                      {s.label}
+                    </dt>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </div>

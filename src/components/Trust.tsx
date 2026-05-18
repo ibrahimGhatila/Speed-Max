@@ -3,21 +3,23 @@ import { partners } from "@/lib/site";
 export default function Trust() {
   const list = [...partners, ...partners];
   return (
-    <section className="bg-ink border-y border-white/8">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-10 py-10 lg:py-12">
+    <section className="bg-paper border-b border-line">
+      <div className="mx-auto max-w-[1440px] px-6 lg:px-10 py-8">
         <div className="flex items-center gap-8">
           <div className="hidden lg:block shrink-0 max-w-[200px]">
-            <div className="eyebrow-mute">Vendors & partners</div>
-            <div className="mt-2 text-[14px] text-white/70">
+            <div className="text-[10px] tracking-[0.18em] uppercase font-medium text-mute">
+              Vendors & partners
+            </div>
+            <div className="mt-1.5 text-[13px] text-ink/70 leading-snug">
               Authorised across the brands you rely on.
             </div>
           </div>
           <div className="relative flex-1 overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
-            <div className="marquee-track flex items-center gap-14 whitespace-nowrap">
+            <div className="marquee-track flex items-center gap-12 whitespace-nowrap">
               {list.map((p, i) => (
                 <span
                   key={`${p}-${i}`}
-                  className="text-[22px] lg:text-[26px] font-semibold text-white/35 hover:text-white transition-colors tracking-[-0.02em]"
+                  className="text-[18px] lg:text-[20px] font-semibold text-ink/35 hover:text-ink transition-colors tracking-[-0.02em]"
                 >
                   {p}
                 </span>
