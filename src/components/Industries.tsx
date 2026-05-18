@@ -23,13 +23,13 @@ export default function Industries() {
   }, [prev, next]);
 
   return (
-    <section className="relative bg-ink-deep py-20 lg:py-28">
+    <section className="relative bg-ink-deep py-16 lg:py-20">
       <div className="absolute inset-0 bg-dots opacity-30 pointer-events-none" />
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-7">
             <div className="eyebrow">Industries</div>
-            <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[56px] text-white">
+            <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[52px] text-white">
               Built for the{" "}
               <span className="text-white/55">
                 businesses that build Malaysia.
@@ -42,35 +42,44 @@ export default function Industries() {
           </div>
         </div>
 
-        <div className="mt-12 lg:mt-20 grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
-          <div className="lg:col-span-5 flex flex-col justify-between order-2 lg:order-1">
+        <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+          {/* Left column */}
+          <div className="lg:col-span-5 flex flex-col order-2 lg:order-1">
             <div key={`text-${current.slug}`} className="rise">
               <div className="flex items-baseline gap-3 text-[10px] tabular tracking-[0.18em] uppercase text-white/55">
                 <span>{String(i + 1).padStart(2, "0")}</span>
                 <span className="h-px w-6 bg-white/20" />
                 <span>{String(total).padStart(2, "0")}</span>
               </div>
-              <h3 className="mt-5 font-display text-[36px] lg:text-[52px] text-white leading-[1.05]">
+              <h3 className="mt-4 font-display text-[32px] lg:text-[44px] text-white leading-[1.05]">
                 {current.title}
               </h3>
-              <p className="mt-5 text-[15px] lg:text-[16px] text-white/75 leading-[1.6] max-w-md">
+              <p className="mt-4 text-[15px] text-white/75 leading-[1.55] max-w-md">
                 {current.body}
               </p>
-              <div className="mt-6 h-px w-10 bg-accent" />
+              <div className="mt-5 h-px w-10 bg-accent" />
+            </div>
 
-              <div className="mt-8 text-[11px] tracking-[0.18em] uppercase text-white/45">
+            {/* Other sectors list — bigger, more prominent */}
+            <div className="mt-7 flex-1">
+              <div className="text-[10px] tracking-[0.18em] uppercase text-white/45 font-medium">
                 Other sectors
               </div>
-              <ul className="mt-3 space-y-0.5">
+              <ul className="mt-3 border-t border-white/10">
                 {industries.map((ind, idx) =>
                   idx === i ? null : (
-                    <li key={ind.slug}>
+                    <li key={ind.slug} className="border-b border-white/10">
                       <button
                         type="button"
                         onClick={() => setI(idx)}
-                        className="text-[13px] text-white/55 hover:text-white transition-colors"
+                        className="group/sector flex items-baseline gap-4 w-full py-3 text-left transition-colors"
                       >
-                        {ind.title}
+                        <span className="text-[10px] tabular text-white/35 tracking-wider group-hover/sector:text-accent transition-colors">
+                          {String(idx + 1).padStart(2, "0")}
+                        </span>
+                        <span className="font-display text-[18px] lg:text-[20px] text-white/55 group-hover/sector:text-white tracking-[-0.02em] transition-colors">
+                          {ind.title}
+                        </span>
                       </button>
                     </li>
                   ),
@@ -78,7 +87,8 @@ export default function Industries() {
               </ul>
             </div>
 
-            <div className="mt-10 lg:mt-12 flex items-center gap-5">
+            {/* Controls */}
+            <div className="mt-7 flex items-center gap-5">
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -119,10 +129,11 @@ export default function Industries() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          {/* Right column — image fills available height */}
+          <div className="lg:col-span-7 order-1 lg:order-2 flex">
             <div
               key={`image-${current.slug}`}
-              className="relative aspect-[5/6] overflow-hidden border border-white/10 rise"
+              className="relative w-full min-h-[420px] lg:min-h-0 aspect-[5/6] lg:aspect-auto overflow-hidden border border-white/10 rise"
             >
               <Image
                 src={img(current.image as ImageKey, 1400, 80)}
