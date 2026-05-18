@@ -1,36 +1,32 @@
 import { coverage } from "@/lib/site";
 
-// Map asset committed at /public/malaysia-map.jpg
 const MAP_SRC = "/malaysia-map.jpg";
 
 export default function Coverage() {
   return (
-    <section className="relative bg-paper py-20 lg:py-28 overflow-hidden">
-      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
-        {/* Section header */}
-        <div className="max-w-3xl mb-12 lg:mb-16">
-          <div className="text-[11px] tracking-[0.18em] uppercase font-medium text-accent">
-            Coverage
-          </div>
-          <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[52px] text-ink">
-            Field engineering{" "}
-            <span className="text-mute">across Malaysia.</span>
-          </h2>
-        </div>
+    <section className="relative bg-white">
+      <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10 py-10 lg:py-14">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left — header + city list */}
+          <div className="lg:col-span-5">
+            <div className="text-[11px] tracking-[0.18em] uppercase font-medium text-accent">
+              Coverage
+            </div>
+            <h2 className="mt-3 font-display text-[28px] sm:text-[36px] lg:text-[44px] text-ink">
+              Field engineering{" "}
+              <span className="text-mute">across Malaysia.</span>
+            </h2>
 
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left — city list */}
-          <div className="lg:col-span-4">
-            <ul>
+            <ul className="mt-8 max-w-sm">
               {coverage.map((r, i) => (
                 <li
                   key={r.region}
-                  className="flex items-baseline gap-5 py-4 border-b border-line first:border-t"
+                  className="flex items-baseline gap-5 py-3 border-b border-line first:border-t"
                 >
                   <span className="text-[10px] tabular text-mute tracking-wider w-6">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <span className="font-display text-[20px] lg:text-[22px] text-ink tracking-[-0.02em]">
+                  <span className="font-display text-[17px] lg:text-[18px] text-ink tracking-[-0.02em]">
                     {r.region}
                   </span>
                 </li>
@@ -38,9 +34,9 @@ export default function Coverage() {
             </ul>
           </div>
 
-          {/* Right — Malaysia map image, no overlay */}
-          <div className="lg:col-span-8 relative">
-            <div className="relative w-full" style={{ aspectRatio: "1 / 1" }}>
+          {/* Right — Malaysia map */}
+          <div className="lg:col-span-7 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[460px]" style={{ aspectRatio: "1 / 1" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={MAP_SRC}
