@@ -25,7 +25,7 @@ export default function Approach() {
                 {/* Watermark number — thick, very faint, lightly grows on hover */}
                 <span
                   aria-hidden="true"
-                  className="absolute right-4 lg:right-6 -bottom-6 lg:-bottom-8 tabular leading-[0.82] font-extrabold text-[210px] lg:text-[260px] tracking-[-0.06em] text-ink/[0.035] group-hover:text-ink/[0.08] group-hover:scale-[1.04] origin-bottom-right transition-all duration-700 ease-out select-none pointer-events-none"
+                  className="absolute right-4 lg:right-6 -bottom-6 lg:-bottom-8 tabular leading-[0.82] font-extrabold text-[252px] lg:text-[312px] tracking-[-0.06em] text-ink/[0.035] group-hover:text-ink/[0.08] group-hover:scale-[1.04] origin-bottom-right transition-all duration-700 ease-out select-none pointer-events-none"
                 >
                   {a.number}
                 </span>
