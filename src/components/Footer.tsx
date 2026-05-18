@@ -1,123 +1,107 @@
 import Link from "next/link";
-import { Mail, Phone, MapPin, Printer, ArrowRight } from "lucide-react";
-import { Facebook, Instagram, Linkedin } from "./SocialIcons";
 import Logo from "./Logo";
 import { nav, services, site } from "@/lib/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-950 text-white/70">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-12 gap-10">
-        <div className="lg:col-span-4">
-          <Logo variant="light" />
-          <p className="mt-5 text-sm leading-relaxed text-white/60 max-w-sm">
-            Speedmax Solutions is a one-stop technology provider delivering
-            structured cabling, system integration, IP telephony, security and
-            AutoCount accounting solutions to businesses across Malaysia.
-          </p>
+    <footer className="bg-ink text-paper">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pt-20 lg:pt-28 pb-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+          <div className="lg:col-span-6">
+            <div className="font-display text-[44px] sm:text-[72px] lg:text-[112px] leading-[0.96]">
+              {site.email}
+            </div>
+          </div>
+          <div className="lg:col-span-6 lg:pl-10 lg:border-l border-white/12">
+            <div className="text-[12px] tracking-[0.14em] uppercase text-paper/60">
+              Studio
+            </div>
+            <address className="not-italic mt-3 text-[16px] leading-relaxed text-paper/85">
+              {site.address.line1}<br />
+              {site.address.line2}<br />
+              {site.address.city}<br />
+              {site.address.state}, {site.address.country}
+            </address>
 
-          <div className="mt-6 flex items-center gap-3">
-            <a
-              href={site.social.facebook}
-              aria-label="Facebook"
-              className="h-9 w-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-600 transition-colors"
-            >
-              <Facebook className="h-4 w-4" />
-            </a>
-            <a
-              href={site.social.instagram}
-              aria-label="Instagram"
-              className="h-9 w-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-600 transition-colors"
-            >
-              <Instagram className="h-4 w-4" />
-            </a>
-            <a
-              href={site.social.linkedin}
-              aria-label="LinkedIn"
-              className="h-9 w-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-600 hover:border-brand-600 transition-colors"
-            >
-              <Linkedin className="h-4 w-4" />
-            </a>
+            <div className="mt-6 flex flex-col sm:flex-row sm:gap-10 gap-2 text-[14px] tabular-nums text-paper/85">
+              <span>T &nbsp; {site.phone}</span>
+              <span>F &nbsp; {site.fax}</span>
+            </div>
           </div>
         </div>
 
-        <div className="lg:col-span-2">
-          <div className="text-white font-semibold mb-4">Company</div>
-          <ul className="space-y-2.5 text-sm">
-            {nav.map((n) => (
-              <li key={n.href}>
-                <Link href={n.href} className="hover:text-white transition-colors">
-                  {n.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div className="rule-ink mt-20 lg:mt-28" />
 
-        <div className="lg:col-span-3">
-          <div className="text-white font-semibold mb-4">Services</div>
-          <ul className="space-y-2.5 text-sm">
-            {services.slice(0, 6).map((s) => (
-              <li key={s.slug}>
-                <Link
-                  href={`/products#${s.slug}`}
-                  className="hover:text-white transition-colors"
-                >
-                  {s.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="lg:col-span-3">
-          <div className="text-white font-semibold mb-4">Get in Touch</div>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-3">
-              <MapPin className="h-4 w-4 text-brand-500 mt-0.5 shrink-0" />
-              <span>
-                {site.address.line1}, {site.address.line2},
-                <br />
-                {site.address.city}, {site.address.state}
-              </span>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone className="h-4 w-4 text-brand-500" />
-              <a href={`tel:${site.phoneRaw}`} className="hover:text-white">
-                {site.phone}
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Printer className="h-4 w-4 text-brand-500" />
-              {site.fax}
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail className="h-4 w-4 text-brand-500" />
-              <a href={`mailto:${site.email}`} className="hover:text-white">
-                {site.email}
-              </a>
-            </li>
-          </ul>
-
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand-600 text-white px-5 py-2.5 text-sm font-semibold hover:bg-brand-700 transition-colors"
-          >
-            Free Site Survey
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </div>
-
-      <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-white/50">
-          <div>
-            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-4">
+            <Logo variant="paper" />
+            <p className="mt-5 text-[14px] text-paper/65 leading-relaxed max-w-xs">
+              {site.legalName}. Specialist contractor for ICT and extra-low-voltage construction across Malaysia since {site.foundedYear}.
+            </p>
           </div>
-          <div className="flex items-center gap-5">
-            <Link href="/" className="hover:text-white">Privacy</Link>
-            <Link href="/" className="hover:text-white">Terms</Link>
-            <span>SSM Registered · Malaysia</span>
+
+          <div className="lg:col-span-3">
+            <div className="text-[12px] tracking-[0.14em] uppercase text-paper/60">
+              Index
+            </div>
+            <ul className="mt-4 space-y-2.5 text-[14px]">
+              {nav.map((n) => (
+                <li key={n.href}>
+                  <Link href={n.href} className="text-paper/85 hover:text-paper link-ul">
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-3">
+            <div className="text-[12px] tracking-[0.14em] uppercase text-paper/60">
+              Capabilities
+            </div>
+            <ul className="mt-4 space-y-2.5 text-[14px]">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/products#${s.slug}`}
+                    className="text-paper/85 hover:text-paper link-ul"
+                  >
+                    {s.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="lg:col-span-2">
+            <div className="text-[12px] tracking-[0.14em] uppercase text-paper/60">
+              Elsewhere
+            </div>
+            <ul className="mt-4 space-y-2.5 text-[14px]">
+              <li>
+                <a href={site.social.linkedin} className="text-paper/85 hover:text-paper link-ul">
+                  LinkedIn ↗
+                </a>
+              </li>
+              <li>
+                <a href={site.social.facebook} className="text-paper/85 hover:text-paper link-ul">
+                  Facebook ↗
+                </a>
+              </li>
+              <li>
+                <a href={`https://wa.me/${site.whatsapp}`} className="text-paper/85 hover:text-paper link-ul">
+                  WhatsApp ↗
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[12px] text-paper/55 tabular-nums">
+          <div>© {new Date().getFullYear()} {site.legalName} · SSM {site.ssm}</div>
+          <div className="flex items-center gap-6">
+            <Link href="/" className="hover:text-paper">Privacy</Link>
+            <Link href="/" className="hover:text-paper">Terms</Link>
           </div>
         </div>
       </div>

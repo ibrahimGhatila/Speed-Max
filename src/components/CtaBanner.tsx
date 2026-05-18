@@ -1,42 +1,57 @@
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 
 export default function CtaBanner() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-900 to-navy-950" />
-      <div className="absolute inset-0 bg-grid opacity-40" />
-      <div className="absolute -left-32 -bottom-32 h-96 w-96 rounded-full bg-brand-600/30 blur-3xl" />
+    <section className="bg-paper">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-24 lg:py-32 border-t border-line">
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-7">
+            <div className="eyebrow">08 / Get in touch</div>
+            <h2 className="mt-6 font-display text-[40px] sm:text-[60px] lg:text-[88px] leading-[0.98]">
+              Let&apos;s build
+              <br />
+              <span className="text-mute">something</span>
+              <span className="relative inline-block">
+                {" "}reliable.
+                <span className="absolute -right-3 top-[0.05em] h-2 w-2 rounded-full bg-accent" />
+              </span>
+            </h2>
+          </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-        <div className="max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Ready to modernise your{" "}
-            <span className="text-brand-500">technology stack</span>?
-          </h2>
-          <p className="mt-4 text-white/70 text-lg">
-            Tell us about your project — we’ll arrange a free site survey and
-            return a fixed-price proposal within 3 working days.
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-4">
-          <Link
-            href="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-600/20 hover:bg-brand-700 transition-colors"
-          >
-            Request Site Survey
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Link>
-          <a
-            href={`tel:${site.phoneRaw}`}
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            {site.phone}
-          </a>
+          <div className="lg:col-span-5 lg:pl-10 lg:border-l border-line flex flex-col justify-end">
+            <p className="text-[16px] text-ink/75 leading-relaxed max-w-md">
+              Tell us about your site, your timeline, your concerns.
+              We&apos;ll come back with a fixed-price proposal within three
+              working days.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-6">
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-3 bg-ink text-paper px-6 py-4 text-[14px] font-medium rounded-[2px] hover:bg-accent transition-colors"
+              >
+                Start a project
+                <Arrow />
+              </Link>
+              <a
+                href={`tel:${site.phoneRaw}`}
+                className="text-[14px] font-medium link-ul tabular-nums"
+              >
+                {site.phone}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function Arrow() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square" />
+    </svg>
   );
 }

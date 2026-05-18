@@ -2,72 +2,97 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ArrowRight } from "lucide-react";
 import Logo from "./Logo";
-import { nav } from "@/lib/site";
+import { nav, site } from "@/lib/site";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-navy-900/5">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <Link href="/" aria-label="Speedmax home">
+    <header className="sticky top-0 z-40 bg-paper/80 backdrop-blur-md border-b border-line">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 h-16 flex items-center justify-between">
+        <Link href="/" aria-label="Speedmax home" className="shrink-0">
           <Logo />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-1">
-          {nav.map((item) => (
+        <nav className="hidden lg:flex items-center gap-10">
+          {nav.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
-              className="px-4 py-2 text-sm font-medium text-navy-800 hover:text-brand-600 transition-colors"
+              className="group inline-flex items-baseline gap-2 text-[13px] text-ink hover:text-accent transition-colors"
             >
-              {item.label}
+              <span className="text-mute text-[10px] tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="link-ul">{item.label}</span>
             </Link>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-6">
+          <a
+            href={`tel:${site.phoneRaw}`}
+            className="text-[13px] tabular-nums text-ink hover:text-accent transition-colors"
+          >
+            {site.phone}
+          </a>
           <Link
             href="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-brand-600 text-white px-5 py-2.5 text-sm font-semibold shadow-sm hover:bg-brand-700 transition-colors"
+            className="inline-flex items-center text-[13px] font-medium text-paper bg-ink hover:bg-accent transition-colors px-4 py-2 rounded-[2px]"
           >
-            Free Site Survey
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            Start a project
           </Link>
         </div>
 
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-md text-navy-900 hover:bg-navy-900/5"
+          className="lg:hidden w-9 h-9 inline-flex flex-col items-center justify-center gap-1.5"
           aria-label="Toggle menu"
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <span
+            className={`block h-px w-5 bg-ink transition-transform ${
+              open ? "translate-y-[3px] rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`block h-px w-5 bg-ink transition-transform ${
+              open ? "-translate-y-[3px] -rotate-45" : ""
+            }`}
+          />
         </button>
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-navy-900/5 bg-white">
-          <div className="px-4 py-3 flex flex-col gap-1">
-            {nav.map((item) => (
+        <div className="lg:hidden border-t border-line bg-paper">
+          <div className="px-6 py-6 flex flex-col">
+            {nav.map((item, i) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="px-3 py-3 rounded-md text-base font-medium text-navy-900 hover:bg-navy-900/5"
+                className="flex items-baseline gap-3 py-3 text-base"
               >
+                <span className="text-mute text-[10px] tabular-nums w-6">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 {item.label}
               </Link>
             ))}
+            <div className="rule my-4" />
+            <a
+              href={`tel:${site.phoneRaw}`}
+              className="py-2 text-sm text-mute tabular-nums"
+            >
+              {site.phone}
+            </a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 text-white px-5 py-3 text-sm font-semibold"
+              className="mt-3 inline-flex items-center justify-center text-sm font-medium text-paper bg-ink px-4 py-3 rounded-[2px]"
             >
-              Free Site Survey
-              <ArrowRight className="h-4 w-4" />
+              Start a project
             </Link>
           </div>
         </div>

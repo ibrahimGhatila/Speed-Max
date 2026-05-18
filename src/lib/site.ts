@@ -1,7 +1,7 @@
 export const site = {
   name: "Speedmax",
   legalName: "Speedmax Solutions Sdn Bhd",
-  tagline: "One-Stop Technology Solutions",
+  ssm: "972917-U",
   foundedYear: 2010,
   phone: "+607 213 2500",
   phoneRaw: "+6072132500",
@@ -12,10 +12,10 @@ export const site = {
     line1: "25, Jalan Ekoperniagaan 2/7",
     line2: "Taman Ekoperniagaan",
     city: "81100 Johor Bahru",
-    state: "Johor Darul Takzim",
+    state: "Johor",
     country: "Malaysia",
   },
-  hours: "Mon – Fri · 9:00 AM – 6:00 PM",
+  hours: "Mon — Fri  ·  09:00–18:00 MYT",
   social: {
     facebook: "#",
     instagram: "#",
@@ -24,154 +24,150 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Home", href: "/" },
-  { label: "Products & Services", href: "/products" },
-  { label: "About Us", href: "/about" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Index", href: "/" },
+  { label: "Capabilities", href: "/products" },
+  { label: "Studio", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 export const services = [
   {
     slug: "structured-cabling",
+    number: "01",
     title: "Structured Cabling",
-    short:
-      "Design, build and manage telecommunications infrastructure for reliable connectivity.",
+    short: "Cat6A and fibre, from blueprint to certified channel test.",
     description:
-      "We design, build and manage telecommunications infrastructure that supports any voice or data application — engineered to meet current requirements and scale with your business.",
-    bullets: [
-      "Single and multi-site solutions",
-      "CAT5e / CAT6 / CAT6A / Fiber optic",
-      "Contract work and retained service",
-      "Voice and data projects",
+      "We design, install and certify low-voltage cabling infrastructure for offices, warehouses and data centres — engineered to today's demands and tomorrow's bandwidth.",
+    specs: [
+      "Cat5e / Cat6 / Cat6A / OS2 fibre",
+      "Permanent-link & channel certification",
+      "Single-site and multi-site rollouts",
+      "Containment, pathway & dressing",
     ],
-    icon: "Cable",
     image: "structuredCabling",
   },
   {
     slug: "system-integration",
+    number: "02",
     title: "System Integration",
-    short:
-      "Ensure every IT component works seamlessly with fast and reliable access.",
+    short: "Servers, switching and storage, working as one system.",
     description:
-      "We bring servers, networks, storage and software together so your business runs as one system — with the performance, security and uptime your team relies on.",
-    bullets: [
-      "Server and storage deployment",
-      "Network architecture and switching",
-      "Microsoft 365 and email migration",
-      "IT consultancy and outsourcing",
+      "From bare-metal racking to Microsoft 365 migration, we bring the hardware, networks and software your team relies on into a single, supportable stack.",
+    specs: [
+      "Server, storage & virtualisation",
+      "L2/L3 networking, VLANs, Wi-Fi 6",
+      "Microsoft 365 & email migration",
+      "Documentation & handover",
     ],
-    icon: "Server",
     image: "systemIntegration",
   },
   {
     slug: "ip-pbx",
-    title: "IP PBX & VoIP",
-    short: "Integrated VoIP with IP PBX, ready for any SIP trunk provider.",
+    number: "03",
+    title: "IP Telephony",
+    short: "Modern PBX with SIP trunks — on-prem or cloud.",
     description:
-      "Modern IP telephony for offices of every size. We deploy and maintain IP PBX systems integrated with leading VoIP providers, on-prem or cloud.",
-    bullets: [
-      "Yeastar / Grandstream / 3CX",
+      "IP telephony platforms that scale with your team. Mobile extensions, call recording, IVR and reporting, integrated cleanly with your existing carrier.",
+    specs: [
+      "Yeastar · Grandstream · 3CX",
       "SIP trunk integration",
-      "Mobile and remote extensions",
-      "Call recording and reporting",
+      "Mobile & remote extensions",
+      "Call recording & analytics",
     ],
-    icon: "PhoneCall",
     image: "ipPbx",
   },
   {
-    slug: "security-access-control",
-    title: "Security & Access Control",
-    short:
-      "CCTV surveillance and door access systems that protect what matters.",
+    slug: "security",
+    number: "04",
+    title: "Security & Access",
+    short: "IP surveillance and access control, monitored 24/7.",
     description:
-      "From IP camera installations to enterprise access control, we deliver security solutions that keep your premises, people and assets safe — and visible from anywhere.",
-    bullets: [
-      "IP and analog CCTV systems",
-      "Card and biometric access",
+      "Designed-in security, not bolted-on. IP cameras, access-controlled doors and visitor management — auditable, remote, and ready for incident response.",
+    specs: [
+      "Hikvision · Dahua · Uniview",
+      "Card & biometric access",
       "Visitor management",
       "Remote monitoring & alerts",
     ],
-    icon: "ShieldCheck",
     image: "security",
   },
   {
     slug: "collaboration",
-    title: "Collaboration",
-    short:
-      "Meeting rooms, video conferencing and workplace tools that bring teams together.",
+    number: "05",
+    title: "Collaboration Rooms",
+    short: "Meeting rooms ready for Teams, Zoom and Google Meet.",
     description:
-      "Equip your teams with the audio, video and collaboration platforms they need to work effectively across rooms, sites and time zones.",
-    bullets: [
+      "Conference-room AV that just works. Cameras, mics, displays and wireless presentation engineered to remove the awkward start of every meeting.",
+    specs: [
       "Microsoft Teams Rooms",
-      "Conference room AV",
+      "Conference-room audio & video",
       "Wireless presentation",
-      "Unified messaging",
+      "Single-cable connectivity",
     ],
-    icon: "Users",
     image: "collaboration",
   },
   {
     slug: "autocount",
-    title: "AutoCount Accounting",
-    short:
-      "Award-winning AutoCount accounting, POS and e-Invoice solutions.",
+    number: "06",
+    title: "AutoCount Suite",
+    short: "Accounting, POS and e-Invoice — certified AutoCount partner.",
     description:
-      "As an experienced AutoCount partner, we help SMEs across Malaysia digitise their finance, inventory and point-of-sale operations — including e-Invoice compliance.",
-    bullets: [
-      "AutoCount Accounting & Inventory",
-      "AutoCount POS",
-      "Payroll & HRMS",
-      "e-Invoice setup & support",
+      "We implement and support AutoCount Accounting, Inventory, POS, Payroll and e-Invoice for Malaysian SMEs — from licensing to month-end training.",
+    specs: [
+      "Accounting & Inventory",
+      "POS & Payroll",
+      "e-Invoice compliance",
+      "Training & ongoing support",
     ],
-    icon: "Calculator",
     image: "autocount",
   },
 ];
 
 export const stats = [
-  { value: "14+", label: "Years in Business" },
-  { value: "1,200+", label: "Projects Delivered" },
-  { value: "500+", label: "Happy Clients" },
-  { value: "24/7", label: "Support Available" },
+  { value: "14", suffix: "yrs", label: "In business" },
+  { value: "1,200", suffix: "+", label: "Projects delivered" },
+  { value: "99.9", suffix: "%", label: "Uptime SLA" },
+  { value: "24", suffix: "h", label: "Response window" },
 ];
 
 export const partners = [
   "AutoCount",
   "Grandstream",
+  "Yeastar",
   "Cisco",
   "Ubiquiti",
   "Hikvision",
   "Microsoft",
   "Dell",
-  "Yeastar",
+  "Fortinet",
+  "HPE Aruba",
 ];
 
-export const industries = [
-  "Small & Medium Enterprises",
-  "Retail & F&B",
-  "Manufacturing",
-  "Education",
-  "Healthcare",
-  "Property & Construction",
+export const approach = [
+  {
+    number: "I",
+    title: "Survey",
+    body: "A site visit and brief — on-site or virtual — to understand the building, the team and the workload. We leave with measurements, photos and a clear scope.",
+  },
+  {
+    number: "II",
+    title: "Design",
+    body: "A fixed-price proposal, bill of materials and floor plan. You see exactly what is being installed, where, by when, and at what cost.",
+  },
+  {
+    number: "III",
+    title: "Deliver",
+    body: "Installation by our own engineers, certified to standard, documented in a handover pack, and supported on a response SLA you choose.",
+  },
 ];
 
-export const testimonials = [
-  {
-    quote:
-      "Speedmax handled our entire office relocation cabling, network and phone system. Everything was up and running on day one — exactly as planned.",
-    author: "Operations Manager",
-    company: "Manufacturing SME, Johor Bahru",
-  },
-  {
-    quote:
-      "Their AutoCount implementation cut our monthly closing time in half. The team is responsive and genuinely understands SME workflows.",
-    author: "Finance Director",
-    company: "Retail Group, Johor",
-  },
-  {
-    quote:
-      "We've worked with Speedmax for over five years across three offices. They are our default partner for anything IT.",
-    author: "Managing Director",
-    company: "Professional Services Firm",
-  },
-];
+export const featured = {
+  client: "Confidential manufacturer",
+  scope: "Datacenter buildout · Cat6A · 480 drops",
+  location: "Senai, Johor",
+  year: "2024",
+  quote:
+    "Speedmax delivered a clean, certified install across three floors with zero downtime on cutover. Documentation was the best we have ever received from a contractor.",
+  attribution: "IT Director, manufacturing client",
+  image: "featuredProject",
+};

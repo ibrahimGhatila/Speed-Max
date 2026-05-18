@@ -1,25 +1,25 @@
 import { partners } from "@/lib/site";
 
 export default function Partners() {
+  const list = [...partners, ...partners];
   return (
-    <section className="bg-white py-16 lg:py-20 border-y border-navy-900/5">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight">
-          We are pleased to work with{" "}
-          <span className="text-brand-600">trusted partners</span>
-        </h2>
-        <div className="mt-4 mx-auto h-[3px] w-20 rounded-full bg-brand-600" />
-
-        <ul className="mt-12 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-6 gap-y-8 items-center">
-          {partners.map((p) => (
-            <li
-              key={p}
-              className="text-center font-display text-lg font-semibold text-navy-900/40 hover:text-navy-900 transition-colors"
-            >
-              {p}
-            </li>
-          ))}
-        </ul>
+    <section className="bg-paper border-y border-line">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-12 flex items-center gap-10">
+        <div className="hidden sm:block shrink-0 eyebrow w-32">
+          07 / Vendors
+        </div>
+        <div className="relative overflow-hidden flex-1 [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
+          <div className="marquee-track flex items-center gap-14 whitespace-nowrap will-change-transform">
+            {list.map((p, i) => (
+              <span
+                key={`${p}-${i}`}
+                className="text-[20px] lg:text-[24px] font-medium text-ink/40 hover:text-ink transition-colors tracking-[-0.02em]"
+              >
+                {p}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

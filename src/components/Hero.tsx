@@ -1,101 +1,86 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Play, ShieldCheck, Zap, Award } from "lucide-react";
-import { images } from "@/lib/images";
+import { stats, site } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-navy-900 text-white isolate">
-      {/* Background image - right side */}
-      <div className="absolute inset-y-0 right-0 w-full lg:w-2/3 z-0">
-        <Image
-          src={`${images.heroCables}?auto=format&fit=crop&w=2000&q=80`}
-          alt="High-density network cabling installation"
-          fill
-          priority
-          sizes="(min-width: 1024px) 66vw, 100vw"
-          className="object-cover"
-        />
-        {/* Left fade to navy */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/30 lg:from-navy-900 lg:via-navy-900/60 lg:to-transparent" />
-        {/* Bottom darken */}
-        <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
-      </div>
+    <section className="relative bg-paper">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pt-20 lg:pt-32 pb-16 lg:pb-24">
+        {/* Top meta */}
+        <div className="flex items-center justify-between text-[12px] tracking-[0.14em] uppercase text-mute">
+          <div className="flex items-center gap-6">
+            <span className="tabular-nums">01 / Index</span>
+            <span className="hidden sm:inline">{site.address.city.replace(/^\d+\s*/, "")}, {site.address.state}</span>
+          </div>
+          <div className="tabular-nums hidden sm:block">Est. {site.foundedYear}</div>
+        </div>
 
-      <div className="absolute inset-0 bg-grid opacity-30 z-0" />
+        <div className="rule mt-5" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/80 backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
-            Serving Malaysian businesses since 2010
+        {/* Headline */}
+        <div className="mt-12 lg:mt-20 grid lg:grid-cols-12 gap-10">
+          <h1 className="lg:col-span-10 font-display text-[44px] sm:text-[64px] lg:text-[104px] xl:text-[124px] rise">
+            Network infrastructure,
+            <br className="hidden sm:block" />{" "}
+            <span className="text-mute">engineered for</span>{" "}
+            <span className="relative inline-block">
+              uptime.
+              <span className="absolute -right-3 sm:-right-5 top-[0.05em] h-2 w-2 sm:h-3 sm:w-3 rounded-full bg-accent" />
+            </span>
+          </h1>
+        </div>
+
+        {/* Sub + CTAs */}
+        <div className="mt-12 lg:mt-16 grid lg:grid-cols-12 gap-10 items-end">
+          <div className="lg:col-span-5 rise rise-2">
+            <p className="text-[18px] lg:text-[20px] leading-[1.5] text-ink/85 max-w-md">
+              Since 2010, Speedmax has designed, built and maintained the
+              cabling, networks, telephony and accounting systems that keep
+              Malaysian businesses running.
+            </p>
           </div>
 
-          <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight drop-shadow-lg">
-            One-Stop{" "}
-            <span className="text-brand-500">Technology Solutions</span>
-            <br />
-            for Modern Business
-          </h1>
-
-          <p className="mt-6 max-w-xl text-lg text-white/85 leading-relaxed">
-            Structured cabling, system integration, IP telephony and
-            AutoCount accounting — engineered to reduce operating cost,
-            enhance efficiency and keep your business connected.
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <div className="lg:col-span-6 lg:col-start-7 flex flex-wrap items-center gap-x-8 gap-y-4 rise rise-3">
             <Link
               href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-brand-600 px-6 py-3.5 text-sm font-semibold shadow-lg shadow-brand-600/20 hover:bg-brand-700 transition-colors"
+              className="group inline-flex items-center gap-3 bg-ink text-paper px-6 py-4 text-[14px] font-medium rounded-[2px] hover:bg-accent transition-colors"
             >
-              Request Free Site Survey
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              Start a project
+              <Arrow />
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-6 py-3.5 text-sm font-semibold hover:bg-white/20 transition-colors"
+              className="text-[14px] font-medium link-ul"
             >
-              <Play className="h-4 w-4" />
-              Explore Services
+              View capabilities
             </Link>
           </div>
-
-          <dl className="mt-12 grid grid-cols-3 gap-6 max-w-md">
-            <Feature icon={<ShieldCheck className="h-5 w-5" />} label="Reliable" />
-            <Feature icon={<Zap className="h-5 w-5" />} label="Efficient" />
-            <Feature icon={<Award className="h-5 w-5" />} label="Certified" />
-          </dl>
         </div>
 
-        {/* Floating badge on hero image */}
-        <div className="hidden lg:flex justify-end">
-          <div className="rounded-2xl bg-white/95 text-navy-900 p-5 shadow-2xl backdrop-blur max-w-xs">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 rounded-xl bg-brand-600 text-white flex items-center justify-center shrink-0">
-                <ShieldCheck className="h-6 w-6" />
+        {/* Metric bar */}
+        <div className="mt-24 lg:mt-32 border-t border-line">
+          <dl className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-line">
+            {stats.map((s) => (
+              <div key={s.label} className="px-0 lg:px-6 first:pl-0 last:pr-0 py-8">
+                <dt className="eyebrow">{s.label}</dt>
+                <dd className="mt-3 font-display text-[44px] lg:text-[64px] tabular-nums">
+                  {s.value}
+                  <span className="text-mute font-normal text-[0.5em] align-baseline ml-1">
+                    {s.suffix}
+                  </span>
+                </dd>
               </div>
-              <div>
-                <div className="font-semibold">99.9% Uptime SLA</div>
-                <div className="text-navy-900/65 text-sm mt-0.5">
-                  Managed networks across Malaysia
-                </div>
-              </div>
-            </div>
-          </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>
   );
 }
 
-function Feature({ icon, label }: { icon: React.ReactNode; label: string }) {
+function Arrow() {
   return (
-    <div className="flex flex-col items-start gap-2">
-      <div className="h-10 w-10 rounded-lg bg-white/10 border border-white/15 backdrop-blur flex items-center justify-center text-brand-400">
-        {icon}
-      </div>
-      <span className="text-sm font-medium text-white/90">{label}</span>
-    </div>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+      <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="square" />
+    </svg>
   );
 }

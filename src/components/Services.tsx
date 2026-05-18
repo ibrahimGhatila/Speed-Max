@@ -1,69 +1,83 @@
 import Link from "next/link";
-import {
-  Cable,
-  Server,
-  PhoneCall,
-  ShieldCheck,
-  Users,
-  Calculator,
-  ArrowUpRight,
-} from "lucide-react";
+import Image from "next/image";
 import { services } from "@/lib/site";
-
-const iconMap = {
-  Cable,
-  Server,
-  PhoneCall,
-  ShieldCheck,
-  Users,
-  Calculator,
-} as const;
+import { img } from "@/lib/images";
+import type { ImageKey } from "@/lib/images";
 
 export default function Services() {
   return (
-    <section className="bg-navy-50/40 py-20 lg:py-28" id="services">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl">
-          <div className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">
-            Our Products & Services
+    <section className="bg-paper">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-20 lg:py-32">
+        <div className="grid lg:grid-cols-12 gap-10 items-end">
+          <div className="lg:col-span-8">
+            <div className="eyebrow">03 / Capabilities</div>
+            <h2 className="mt-6 font-display text-[36px] sm:text-[52px] lg:text-[72px] max-w-3xl">
+              Six disciplines.
+              <br />
+              <span className="text-mute">One contractor.</span>
+            </h2>
           </div>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
-            <span className="brand-underline">Everything</span> you need to run,
-            secure and grow your IT
-          </h2>
-          <p className="mt-5 text-navy-900/70 text-lg">
-            From the cabling in your walls to the accounting software on your
-            laptops — we design, install and maintain it all under one roof.
-          </p>
+          <div className="lg:col-span-4 text-[15px] text-mute leading-relaxed">
+            We design, install and maintain the systems your business runs on
+            — from the structured cabling in your walls to the accounting
+            software on your laptops.
+          </div>
         </div>
 
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {services.map((svc) => {
-            const Icon = iconMap[svc.icon as keyof typeof iconMap] ?? Server;
-            return (
-              <Link
-                key={svc.slug}
-                href={`/products#${svc.slug}`}
-                className="group relative rounded-2xl border border-navy-900/8 bg-white p-7 hover:border-brand-600/40 hover:shadow-xl hover:shadow-navy-900/5 transition-all"
-              >
-                <div className="h-14 w-14 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                  <Icon className="h-7 w-7" />
+        <div className="mt-16 lg:mt-24 border-t border-line">
+          {services.map((svc) => (
+            <Link
+              key={svc.slug}
+              href={`/products#${svc.slug}`}
+              className="group block border-b border-line py-6 lg:py-8 transition-colors hover:bg-paper-warm/40"
+            >
+              <div className="grid grid-cols-12 items-center gap-4 lg:gap-8">
+                <div className="col-span-2 lg:col-span-1 text-[12px] text-mute tabular-nums tracking-wider">
+                  / {svc.number}
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-navy-900">
+                <div className="col-span-10 lg:col-span-4 font-display text-[22px] lg:text-[32px] tracking-[-0.03em]">
                   {svc.title}
-                </h3>
-                <p className="mt-2 text-navy-900/65 leading-relaxed text-sm">
+                </div>
+                <div className="hidden lg:block lg:col-span-5 text-[15px] text-ink/70">
                   {svc.short}
-                </p>
-                <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600">
-                  Learn more
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </Link>
-            );
-          })}
+                </div>
+                <div className="col-span-12 lg:col-span-2 lg:hidden text-[14px] text-ink/70 mt-1">
+                  {svc.short}
+                </div>
+                <div className="hidden lg:flex lg:col-span-2 justify-end">
+                  <div className="relative h-14 w-20 overflow-hidden rounded-[2px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    <Image
+                      src={img(svc.image as ImageKey, 400, 70)}
+                      alt=""
+                      fill
+                      sizes="80px"
+                      className="object-cover duotone"
+                    />
+                  </div>
+                </div>
+                <div className="hidden lg:block lg:col-span-1 text-right">
+                  <ArrowRight />
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ArrowRight() {
+  return (
+    <svg
+      width="18"
+      height="14"
+      viewBox="0 0 18 14"
+      fill="none"
+      aria-hidden="true"
+      className="inline-block text-ink/40 transition-all group-hover:text-accent group-hover:translate-x-1"
+    >
+      <path d="M1 7h16M11 1l6 6-6 6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="square" />
+    </svg>
   );
 }

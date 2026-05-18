@@ -1,21 +1,21 @@
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Stats from "@/components/Stats";
+import FeaturedProject from "@/components/FeaturedProject";
 import Services from "@/components/Services";
-import WhyUs from "@/components/WhyUs";
+import Approach from "@/components/Approach";
+import About from "@/components/About";
+import Quote from "@/components/Quote";
 import Partners from "@/components/Partners";
-import Testimonials from "@/components/Testimonials";
 import CtaBanner from "@/components/CtaBanner";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Stats />
+      <FeaturedProject />
       <Services />
-      <WhyUs />
-      <Testimonials />
+      <Approach />
+      <About />
+      <Quote />
       <Partners />
       <CtaBanner />
     </>

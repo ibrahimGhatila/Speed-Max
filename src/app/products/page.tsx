@@ -1,123 +1,107 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Cable,
-  Server,
-  PhoneCall,
-  ShieldCheck,
-  Users,
-  Calculator,
-  CheckCircle2,
-  ArrowRight,
-} from "lucide-react";
 import { services } from "@/lib/site";
-import { images } from "@/lib/images";
+import { img, type ImageKey } from "@/lib/images";
 import CtaBanner from "@/components/CtaBanner";
 
-const iconMap = {
-  Cable,
-  Server,
-  PhoneCall,
-  ShieldCheck,
-  Users,
-  Calculator,
-} as const;
-
 export const metadata: Metadata = {
-  title: "Products & Services",
+  title: "Capabilities",
   description:
-    "Structured cabling, system integration, IP PBX, security & access control, collaboration and AutoCount accounting services from Speedmax Solutions.",
+    "Six disciplines under one contractor — structured cabling, system integration, IP telephony, security, collaboration and AutoCount.",
 };
 
 export default function ProductsPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-navy-900 text-white">
-        <div className="absolute inset-0 bg-grid opacity-50" />
-        <div className="absolute inset-0 bg-radial-brand" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
-          <div className="max-w-3xl">
-            <div className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-400">
-              What We Do
-            </div>
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-              Products & <span className="text-brand-500">Services</span>
+      <section className="bg-paper">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pt-20 lg:pt-32 pb-12 lg:pb-20">
+          <div className="flex items-center justify-between text-[12px] tracking-[0.14em] uppercase text-mute">
+            <span className="tabular-nums">02 / Capabilities</span>
+            <span className="tabular-nums hidden sm:block">6 disciplines</span>
+          </div>
+          <div className="rule mt-5" />
+
+          <div className="mt-12 lg:mt-20 grid lg:grid-cols-12 gap-10">
+            <h1 className="lg:col-span-9 font-display text-[44px] sm:text-[64px] lg:text-[96px]">
+              Everything we
+              <br />
+              <span className="text-mute">design, install</span>
+              <br />
+              <span className="text-mute">and maintain.</span>
             </h1>
-            <p className="mt-5 text-lg text-white/75">
-              One partner for the cabling in your walls, the systems on your
-              desks, and the accounting in your books. Explore everything
-              Speedmax delivers below.
+            <p className="lg:col-span-3 lg:pt-4 text-[16px] lg:text-[17px] leading-relaxed text-ink/75">
+              One contractor for the cabling, networks and systems that
+              underpin a working business. No hand-offs, no finger-pointing,
+              one accountable team.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-16 lg:space-y-24">
+      <section className="bg-paper">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-10 pb-16 lg:pb-24 space-y-24 lg:space-y-40">
           {services.map((svc, i) => {
-            const Icon = iconMap[svc.icon as keyof typeof iconMap] ?? Server;
             const reverse = i % 2 === 1;
-            const imgSrc =
-              images[svc.image as keyof typeof images] ?? images.structuredCabling;
             return (
               <article
                 id={svc.slug}
                 key={svc.slug}
-                className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center scroll-mt-28"
+                className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start scroll-mt-24"
               >
-                <div className={reverse ? "lg:order-2" : ""}>
-                  <div className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-600">
-                    {String(i + 1).padStart(2, "0")} · Service
-                  </div>
-                  <h2 className="mt-3 text-3xl sm:text-4xl font-bold leading-tight">
-                    <span className="brand-underline">{svc.title}</span>
-                  </h2>
-                  <p className="mt-5 text-navy-900/70 text-lg leading-relaxed">
-                    {svc.description}
-                  </p>
-                  <ul className="mt-6 grid sm:grid-cols-2 gap-3">
-                    {svc.bullets.map((b) => (
-                      <li
-                        key={b}
-                        className="flex items-start gap-3 text-navy-900/85 text-sm"
-                      >
-                        <CheckCircle2 className="h-5 w-5 text-brand-600 mt-0.5 shrink-0" />
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy-900 text-white px-5 py-3 text-sm font-semibold hover:bg-navy-800 transition-colors"
-                  >
-                    Talk to a specialist
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-
-                <div className={reverse ? "lg:order-1" : ""}>
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-navy-900/10">
+                <div className={`lg:col-span-6 ${reverse ? "lg:order-2" : ""}`}>
+                  <div className="relative aspect-[5/6] overflow-hidden">
                     <Image
-                      src={`${imgSrc}?auto=format&fit=crop&w=1200&q=80`}
+                      src={img(svc.image as ImageKey, 1400, 80)}
                       alt={svc.title}
                       fill
-                      sizes="(min-width: 1024px) 40vw, 100vw"
-                      className="object-cover"
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="object-cover duotone"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-navy-950/10 to-transparent" />
-                    <div className="absolute top-5 left-5">
-                      <div className="h-12 w-12 rounded-xl bg-brand-600 text-white flex items-center justify-center shadow-lg">
-                        <Icon className="h-6 w-6" />
-                      </div>
-                    </div>
-                    <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-white/95 backdrop-blur text-navy-900 p-4">
-                      <div className="text-xs uppercase tracking-widest text-brand-600 font-semibold">
-                        Speedmax · {svc.slug}
-                      </div>
-                      <div className="mt-1 font-semibold">{svc.short}</div>
-                    </div>
                   </div>
+                  <div className="mt-4 flex items-center justify-between text-[12px] tracking-[0.14em] uppercase text-mute">
+                    <span className="tabular-nums">Fig. {svc.number}</span>
+                    <span>{svc.title}</span>
+                  </div>
+                </div>
+
+                <div className={`lg:col-span-6 ${reverse ? "lg:order-1" : ""} lg:pt-8`}>
+                  <div className="font-display text-[12px] tabular-nums tracking-[0.14em] uppercase text-mute">
+                    / {svc.number}
+                  </div>
+                  <h2 className="mt-6 font-display text-[36px] sm:text-[52px] lg:text-[64px]">
+                    {svc.title}
+                  </h2>
+                  <p className="mt-6 text-[18px] lg:text-[20px] text-ink/85 leading-[1.55] max-w-lg">
+                    {svc.description}
+                  </p>
+
+                  <div className="mt-12 max-w-lg">
+                    <div className="text-[12px] tracking-[0.14em] uppercase text-mute">
+                      What&apos;s included
+                    </div>
+                    <ul className="mt-4 border-t border-line">
+                      {svc.specs.map((s) => (
+                        <li
+                          key={s}
+                          className="flex items-baseline gap-4 py-3 border-b border-line text-[15px]"
+                        >
+                          <span className="text-mute text-[11px] tabular-nums w-6">
+                            ·
+                          </span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    href="/contact"
+                    className="mt-10 inline-flex items-center gap-3 text-[14px] font-medium link-ul"
+                  >
+                    Brief us on a project
+                    <span>→</span>
+                  </Link>
                 </div>
               </article>
             );

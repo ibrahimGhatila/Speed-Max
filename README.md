@@ -1,17 +1,23 @@
 # Speedmax — One-Stop Technology Solutions
 
-Modern redesign of [speedmax.my](https://www.speedmax.my/) for **Speedmax Solutions Sdn Bhd**, a Johor Bahru–based provider of structured cabling, system integration, IP telephony, security & access control, and AutoCount accounting software.
+Editorial redesign of [speedmax.my](https://www.speedmax.my/) for **Speedmax Solutions Sdn Bhd**, a Johor Bahru–based specialist contractor for ICT and extra-low-voltage construction since 2010.
 
-Built with **Next.js 16 (App Router)**, **TypeScript** and **Tailwind CSS v4**.
+Built with **Next.js 16 (App Router)**, **TypeScript** and **Tailwind CSS v4**, on Inter throughout.
+
+## Design language
+
+- **Palette:** warm paper `#FAFAF9` and near-black ink `#0A0A0A` with a single red accent `#DC2626` used sparingly.
+- **Type:** Inter — display weights at editorial sizes (88–128px), tight tracking (-0.04em), tabular numerals.
+- **Layout:** asymmetric 12-column grids, generous whitespace, hairline rules between sections, numbered section labels.
+- **Motion:** subtle rise-in on hero, marquee partner strip — nothing decorative.
+- **Photography:** desaturated/duotone treatment, used cinematically.
 
 ## Tech stack
 
 - Next.js 16 (App Router, Turbopack)
-- React 19
-- TypeScript 5
+- React 19, TypeScript 5
 - Tailwind CSS v4
-- Lucide icons + inline brand SVGs
-- Inter (body) + Space Grotesk (display) via `next/font`
+- Inter via `next/font/google`
 
 ## Getting started
 
@@ -20,44 +26,22 @@ npm install
 npm run dev
 ```
 
-Then open <http://localhost:3000>.
-
-## Available scripts
-
-```bash
-npm run dev      # start dev server
-npm run build    # production build
-npm run start    # serve the production build
-npm run lint     # eslint
-```
-
 ## Project structure
 
 ```
 src/
   app/
-    layout.tsx        # root layout (utility bar, header, footer, floating CTAs)
-    page.tsx          # homepage
-    products/page.tsx # Products & Services
-    about/page.tsx    # About Us
-    contact/page.tsx  # Contact + lead form
-    globals.css       # Tailwind theme tokens (navy + Speedmax red)
-  components/         # UI components (Header, Hero, Services, ...)
-  lib/site.ts         # central content: services, stats, partners, etc.
+    layout.tsx        # root layout
+    page.tsx          # /  (Index)
+    products/page.tsx # /products  (Capabilities)
+    about/page.tsx    # /about     (Studio)
+    contact/page.tsx  # /contact
+    globals.css       # theme tokens & base type
+  components/
+    Header, Hero, FeaturedProject, Services, Approach,
+    About, Quote, Partners, CtaBanner, Footer, Logo
+  lib/
+    site.ts           # copy: services, stats, approach, featured project
+    images.ts         # curated Unsplash photo references
 ```
 
-All site content (services, stats, contact details, testimonials) lives in `src/lib/site.ts` so non-engineers can edit copy without touching component code.
-
-## Design system
-
-- **Colours:** Navy (`#0b1224`) base, Speedmax red (`#e11d2a`) accent
-- **Type:** Space Grotesk (display) + Inter (body)
-- **Layout:** max-width 7xl (1280px), generous whitespace, alternating light/dark sections
-
-## Deployment
-
-The build is fully static — deploy to Vercel, Netlify, Cloudflare Pages, or any static host.
-
-```bash
-npm run build
-```
