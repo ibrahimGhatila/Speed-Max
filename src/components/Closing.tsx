@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "./Logo";
+import Reveal from "./Reveal";
 import { img } from "@/lib/images";
 import { nav, services, site } from "@/lib/site";
 
@@ -24,7 +25,7 @@ export default function Closing() {
       <div className="relative z-10 flex-1 flex flex-col mx-auto w-full max-w-[1440px] px-6 lg:px-10">
         {/* ─── CTA ─── */}
         <div className="pt-8 lg:pt-12 pb-6 lg:pb-8 grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
-          <div className="lg:col-span-8">
+          <Reveal className="lg:col-span-8">
             <div className="eyebrow">Engage</div>
             <h2 className="mt-3 font-display text-[26px] sm:text-[34px] lg:text-[44px] text-white leading-[1.04]">
               Let&apos;s build something{" "}
@@ -33,8 +34,8 @@ export default function Closing() {
                 <span className="absolute -right-2.5 top-[0.15em] h-2 w-2 bg-accent" />
               </span>
             </h2>
-          </div>
-          <div className="lg:col-span-4 lg:pl-8 lg:border-l border-white/12">
+          </Reveal>
+          <Reveal delay={120} className="lg:col-span-4 lg:pl-8 lg:border-l border-white/12">
             <p className="text-[13px] text-white/70 leading-relaxed">
               Tell us about your site, your team and your timeline — we
               return a fixed-price proposal within three working days.
@@ -54,14 +55,14 @@ export default function Closing() {
                 {site.phone}
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         <div className="h-px bg-white/10" />
 
         {/* ─── Email + studio ─── */}
         <div className="pt-7 lg:pt-10 pb-5 grid lg:grid-cols-12 gap-8 items-end">
-          <div className="lg:col-span-8">
+          <Reveal delay={80} className="lg:col-span-8">
             <div className="eyebrow-mute">Start a conversation</div>
             <a
               href={`mailto:${site.email}`}
@@ -73,8 +74,8 @@ export default function Closing() {
               <span className="h-px w-8 bg-accent" />
               We reply within one working day
             </div>
-          </div>
-          <div className="lg:col-span-4 lg:pl-8 lg:border-l border-white/10">
+          </Reveal>
+          <Reveal delay={200} className="lg:col-span-4 lg:pl-8 lg:border-l border-white/10">
             <div className="eyebrow-mute">Studio</div>
             <address className="not-italic mt-2.5 text-[12px] leading-relaxed text-white/85">
               {site.address.line1}
@@ -87,7 +88,7 @@ export default function Closing() {
               <span>T &nbsp; {site.phone}</span>
               <span>F &nbsp; {site.fax}</span>
             </div>
-          </div>
+          </Reveal>
         </div>
 
         {/* ─── Sitemap (anchored to bottom) ─── */}

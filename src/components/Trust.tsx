@@ -1,10 +1,11 @@
 import { partners } from "@/lib/site";
+import Reveal from "./Reveal";
 
 export default function Trust() {
   const list = [...partners, ...partners];
   return (
     <section className="bg-paper border-b border-line">
-      <div className="mx-auto max-w-[1440px] px-6 lg:px-10 py-8">
+      <Reveal as="div" className="mx-auto max-w-[1440px] px-6 lg:px-10 py-8">
         <div className="flex items-center gap-8">
           <div className="hidden lg:block shrink-0 max-w-[200px]">
             <div className="text-[10px] tracking-[0.18em] uppercase font-medium text-mute">
@@ -27,7 +28,7 @@ export default function Trust() {
             </div>
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

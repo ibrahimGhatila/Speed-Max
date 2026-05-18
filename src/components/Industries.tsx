@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import { industries } from "@/lib/site";
 import { img, type ImageKey } from "@/lib/images";
+import Reveal from "./Reveal";
 
 export default function Industries() {
   const [i, setI] = useState(0);
@@ -26,7 +27,7 @@ export default function Industries() {
     <section className="relative bg-ink-deep py-16 lg:py-20">
       <div className="absolute inset-0 bg-dots opacity-30 pointer-events-none" />
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
-        <div className="max-w-4xl">
+        <Reveal className="max-w-4xl">
           <div className="eyebrow">Industries</div>
           <h2 className="mt-4 font-display text-[32px] sm:text-[40px] lg:text-[52px] text-white">
             Built for the{" "}
@@ -34,7 +35,7 @@ export default function Industries() {
               businesses that build Malaysia.
             </span>
           </h2>
-        </div>
+        </Reveal>
 
         <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           {/* Left column */}
