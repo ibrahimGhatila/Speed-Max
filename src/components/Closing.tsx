@@ -15,6 +15,29 @@ const disciplines = [
   "Something else",
 ];
 
+const promises = [
+  {
+    num: "01",
+    title: "Reply within 24 hours",
+    body: "Acknowledged by the next working day, without fail.",
+  },
+  {
+    num: "02",
+    title: "Fixed-price in 10 days",
+    body: "Scope, timeline and price — no open-ended estimates.",
+  },
+  {
+    num: "03",
+    title: "One-year workmanship",
+    body: "Warrantied on everything we design and install.",
+  },
+  {
+    num: "04",
+    title: "One accountable team",
+    body: "Direct line to the engineer who built your system.",
+  },
+];
+
 export default function Closing() {
   return (
     <section
@@ -36,7 +59,7 @@ export default function Closing() {
 
       <div className="relative z-10 flex-1 min-h-0 flex flex-col mx-auto w-full max-w-[1440px] px-6 lg:px-10 pt-6 lg:pt-7 pb-3">
         {/* ─── Headline + Form + Studio ─── */}
-        <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 flex-1 min-h-0">
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-10">
           {/* Left — headline + form */}
           <Reveal className="lg:col-span-7 flex flex-col min-h-0">
             <div>
@@ -155,8 +178,33 @@ export default function Closing() {
           </Reveal>
         </div>
 
+        {/* ─── Promise strip ─── */}
+        <div className="mt-auto pt-6 lg:pt-8 border-t border-white/10">
+          <div className="eyebrow-mute mb-4">Our promise</div>
+          <dl className="grid grid-cols-2 lg:grid-cols-4 gap-x-5 gap-y-6">
+            {promises.map((p, i) => (
+              <div
+                key={p.num}
+                className={`${i === 0 ? "" : "lg:pl-5 lg:border-l lg:border-white/8"}`}
+              >
+                <dt className="text-[10px] tracking-[0.18em] uppercase text-accent font-medium tabular">
+                  {p.num}
+                </dt>
+                <dd className="mt-2">
+                  <div className="font-display text-[15px] lg:text-[17px] text-white leading-[1.2] tracking-[-0.01em]">
+                    {p.title}
+                  </div>
+                  <div className="mt-1.5 text-[11px] lg:text-[12px] text-white/60 leading-[1.5] max-w-[26ch]">
+                    {p.body}
+                  </div>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
         {/* ─── Bottom bar ─── */}
-        <div className="mt-4 pt-3 border-t border-white/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2.5 text-[10px] text-white/50 tabular shrink-0">
+        <div className="mt-5 pt-3 border-t border-white/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2.5 text-[10px] text-white/50 tabular shrink-0">
           <div className="flex items-center gap-4">
             <Logo variant="light" />
             <span>
