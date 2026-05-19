@@ -186,30 +186,33 @@ function DesktopDropdown({
             : "opacity-0 -translate-y-1 pointer-events-none"
         }`}
       >
-        <div className="w-[720px] bg-white border border-line shadow-[0_30px_80px_-30px_rgba(10,20,40,0.35)]">
-          <ul className="grid grid-cols-2 divide-x divide-line">
+        <div className="relative w-[720px] bg-ink-deep border border-white/10 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)]">
+          {/* Brand accent top edge */}
+          <span className="absolute top-0 inset-x-0 h-px bg-accent/70" />
+
+          <ul className="grid grid-cols-2 divide-x divide-white/8">
             {items.map((child, idx) => (
               <li
                 key={child.href}
-                className={`${idx >= 2 ? "border-t border-line" : ""}`}
+                className={`${idx >= 2 ? "border-t border-white/8" : ""}`}
               >
                 <Link
                   href={child.href}
                   onClick={onClose}
-                  className="group/item flex items-start gap-4 px-7 py-5 hover:bg-paper-warm/60 transition-colors h-full"
+                  className="group/item flex items-start gap-4 px-7 py-6 hover:bg-white/[0.04] transition-colors h-full"
                 >
-                  <span className="mt-1.5 h-px w-3 bg-ink/20 group-hover/item:bg-accent group-hover/item:w-7 transition-all duration-300 shrink-0" />
-                  <span className="flex-1">
-                    <span className="block text-[15px] font-semibold text-ink tracking-[-0.02em]">
+                  <span className="mt-1.5 h-px w-3 bg-white/30 group-hover/item:bg-accent group-hover/item:w-7 transition-all duration-300 shrink-0" />
+                  <span className="flex-1 min-w-0">
+                    <span className="block text-[16px] font-semibold text-white tracking-[-0.02em]">
                       {child.label}
                     </span>
                     {child.short && (
-                      <span className="block text-[12px] text-ink/65 leading-[1.5] mt-0.5">
+                      <span className="block text-[13px] text-white/70 leading-[1.55] mt-1">
                         {child.short}
                       </span>
                     )}
                   </span>
-                  <Arrow className="text-ink/25 group-hover/item:text-accent group-hover/item:translate-x-0.5 transition-all mt-1" />
+                  <Arrow className="text-white/30 group-hover/item:text-accent group-hover/item:translate-x-0.5 transition-all mt-1.5 shrink-0" />
                 </Link>
               </li>
             ))}
