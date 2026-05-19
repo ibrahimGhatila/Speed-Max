@@ -20,19 +20,19 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 flex-1 flex flex-col">
-        <div className="flex-1 mx-auto w-full max-w-[1440px] px-6 lg:px-10 pt-10 lg:pt-20 pb-10 lg:pb-14 flex flex-col justify-center">
+        <div className="flex-1 mx-auto w-full max-w-[1440px] px-6 lg:px-10 pt-8 lg:pt-12 pb-6 lg:pb-8 flex flex-col justify-center">
           <div className="max-w-5xl rise">
-            <h1 className="font-display text-[40px] sm:text-[56px] lg:text-[84px] xl:text-[104px] text-white max-w-5xl">
+            <h1 className="font-display text-[36px] sm:text-[48px] lg:text-[68px] xl:text-[84px] text-white max-w-5xl">
               Network infrastructure for businesses that{" "}
               <span className="text-white/55">can&apos;t afford</span>{" "}
               <span className="relative inline-block text-accent">
                 downtime.
-                <span className="absolute -right-2 top-[0.1em] h-2.5 w-2.5 bg-accent" />
+                <span className="absolute -right-2 top-[0.1em] h-2 w-2 bg-accent" />
               </span>
             </h1>
           </div>
 
-          <div className="mt-10 lg:mt-12 flex flex-wrap items-center gap-x-5 gap-y-3 rise rise-2">
+          <div className="mt-7 lg:mt-9 flex flex-wrap items-center gap-x-4 gap-y-3 rise rise-2">
             <Link
               href="/contact"
               className="btn-lift group inline-flex items-center gap-2.5 bg-accent text-white px-6 py-3 text-[14px] font-semibold hover:bg-accent-hot"
@@ -55,9 +55,9 @@ export default function Hero() {
               {stats.map((s, i) => (
                 <div
                   key={s.label}
-                  className={`py-5 lg:py-6 ${i === 0 ? "lg:pl-0" : "lg:pl-7"} pr-6`}
+                  className={`py-4 lg:py-5 ${i === 0 ? "lg:pl-0" : "lg:pl-7"} pr-6`}
                 >
-                  <dd className="font-display text-[26px] lg:text-[34px] text-white tabular leading-none">
+                  <dd className="font-display text-[24px] lg:text-[30px] text-white tabular leading-none">
                     {s.value}
                     <span className="text-accent text-[0.55em] font-medium ml-1 align-baseline">
                       {s.suffix}
