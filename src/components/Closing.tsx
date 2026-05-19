@@ -42,7 +42,7 @@ export default function Closing() {
   return (
     <section
       id="contact"
-      className="relative isolate overflow-hidden bg-ink-deep min-h-[calc(100svh-5rem)] lg:h-[calc(100svh-5rem)] flex flex-col border-t border-white/8"
+      className="relative isolate overflow-hidden bg-ink-deep min-h-[calc(100svh-5rem)] lg:min-h-[calc(100svh-5rem)] flex flex-col border-t border-white/8"
     >
       <div className="absolute inset-0 z-0">
         <Image
@@ -134,32 +134,57 @@ export default function Closing() {
             delay={150}
             className="lg:col-span-5 lg:pl-10 lg:border-l border-white/12 flex flex-col"
           >
-            <div className="eyebrow-mute">Or, reach us directly</div>
-            <a
-              href={`mailto:${site.email}`}
-              className="mt-2 block font-display text-[22px] sm:text-[24px] lg:text-[26px] leading-[1.05] tracking-[-0.02em] text-white hover:text-accent transition-colors break-all"
-            >
-              {site.email}
-            </a>
-            <div className="mt-1.5 flex items-center gap-3 text-[10px] text-white/55">
-              <span className="h-px w-6 bg-accent" />
-              We reply within one working day
+            <div>
+              <div className="eyebrow-mute">Or, reach us directly</div>
+              <a
+                href={`mailto:${site.email}`}
+                className="mt-2 block font-display text-[22px] sm:text-[24px] lg:text-[28px] leading-[1.05] tracking-[-0.02em] text-white hover:text-accent transition-colors break-all"
+              >
+                {site.email}
+              </a>
+              <div className="mt-1.5 flex items-center gap-3 text-[10px] text-white/55">
+                <span className="h-px w-6 bg-accent" />
+                We reply within one working day
+              </div>
             </div>
 
-            <a
-              href={`tel:${site.phoneRaw}`}
-              className="mt-5 block font-display text-[20px] lg:text-[22px] leading-none tabular text-white hover:text-accent transition-colors"
-            >
-              {site.phone}
-            </a>
-            <div className="mt-1 text-[11px] tabular text-white/50">
-              F &nbsp;{site.fax}
+            <div className="mt-6 lg:mt-7 grid grid-cols-2 gap-x-6 items-start">
+              <div>
+                <div className="eyebrow-mute">Phone</div>
+                <a
+                  href={`tel:${site.phoneRaw}`}
+                  className="mt-2 block font-display text-[18px] lg:text-[22px] leading-none tabular text-white hover:text-accent transition-colors"
+                >
+                  {site.phone}
+                </a>
+                <div className="mt-1.5 text-[11px] tabular text-white/50">
+                  F &nbsp;{site.fax}
+                </div>
+              </div>
+
+              <div>
+                <div className="eyebrow-mute">In real time</div>
+                <a
+                  href={`https://wa.me/${site.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="mt-2 inline-flex items-center gap-2 text-[13px] text-white hover:text-accent transition-colors"
+                >
+                  WhatsApp the studio
+                  <span aria-hidden>↗</span>
+                </a>
+                <div className="mt-1.5 text-[11px] text-white/50 leading-relaxed">
+                  Typical reply under 30 minutes,
+                  <br />
+                  Mon–Fri working hours.
+                </div>
+              </div>
             </div>
 
-            <dl className="mt-5 grid grid-cols-2 gap-x-6 gap-y-4">
+            <dl className="mt-6 lg:mt-7 grid grid-cols-2 gap-x-6 gap-y-4 items-start">
               <div>
                 <dt className="eyebrow-mute">Studio</dt>
-                <dd className="not-italic mt-1.5 text-[12px] text-white/85 leading-relaxed">
+                <dd className="not-italic mt-2 text-[12px] text-white/85 leading-relaxed">
                   {site.address.line1}
                   <br />
                   {site.address.line2}
@@ -170,11 +195,45 @@ export default function Closing() {
 
               <div>
                 <dt className="eyebrow-mute">Hours</dt>
-                <dd className="mt-1.5 text-[12px] text-white/85 leading-relaxed">
+                <dd className="mt-2 text-[12px] text-white/85 leading-relaxed">
                   {site.hours}
+                  <br />
+                  <span className="text-white/50">
+                    Site visits by appointment
+                  </span>
                 </dd>
               </div>
             </dl>
+
+            <div className="mt-auto pt-6 lg:pt-7">
+              <div className="eyebrow-mute">Elsewhere</div>
+              <div className="mt-2.5 flex flex-wrap gap-x-5 gap-y-1.5 text-[12px] text-white/75 tabular">
+                <a
+                  href={site.social.linkedin}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-ul hover:text-white"
+                >
+                  LinkedIn ↗
+                </a>
+                <a
+                  href={site.social.facebook}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-ul hover:text-white"
+                >
+                  Facebook ↗
+                </a>
+                <a
+                  href={`https://wa.me/${site.whatsapp}`}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-ul hover:text-white"
+                >
+                  WhatsApp ↗
+                </a>
+              </div>
+            </div>
           </Reveal>
         </div>
 
@@ -211,32 +270,7 @@ export default function Closing() {
               © {new Date().getFullYear()} {site.legalName} · SSM {site.ssm}
             </span>
           </div>
-          <div className="flex items-center gap-4 flex-wrap">
-            <a
-              href={site.social.linkedin}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hover:text-white"
-            >
-              LinkedIn ↗
-            </a>
-            <a
-              href={site.social.facebook}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hover:text-white"
-            >
-              Facebook ↗
-            </a>
-            <a
-              href={`https://wa.me/${site.whatsapp}`}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="hover:text-white"
-            >
-              WhatsApp ↗
-            </a>
-            <span className="h-3 w-px bg-white/15 hidden lg:block" />
+          <div className="flex items-center gap-5">
             <Link href="/" className="hover:text-white">
               Privacy
             </Link>
