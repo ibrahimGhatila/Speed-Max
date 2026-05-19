@@ -5,6 +5,8 @@ import Industries from "@/components/Industries";
 import Approach from "@/components/Approach";
 import Coverage from "@/components/Coverage";
 import Quote from "@/components/Quote";
+import About from "@/components/About";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Approach />
       <Coverage />
       <Quote />
+      <About />
+      <ContactForm />
     </>
   );
 }

@@ -30,6 +30,15 @@ body {
   color: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchor targets by the sticky header height */
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 body {
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "ss02", "cv11";

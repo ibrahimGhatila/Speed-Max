@@ -31,20 +31,9 @@ export type NavItem = {
 
 export const nav: NavItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "Capabilities",
-    href: "/products",
-    children: [
-      { label: "Structured Cabling", href: "/products/structured-cabling", short: "Cat6A & fibre, certified to standard" },
-      { label: "System Integration", href: "/products/system-integration", short: "Servers, switching & storage as one" },
-      { label: "IP Telephony", href: "/products/ip-telephony", short: "Modern PBX & SIP, on-prem or cloud" },
-      { label: "Security & Access", href: "/products/security", short: "IP CCTV & access control" },
-      { label: "Collaboration Rooms", href: "/products/collaboration", short: "Teams, Zoom & Meet ready" },
-      { label: "AutoCount Suite", href: "/products/autocount", short: "Accounting, POS & e-Invoice" },
-    ],
-  },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const services = [

@@ -34,14 +34,14 @@ export default function Hero() {
 
           <div className="mt-7 lg:mt-9 flex flex-wrap items-center gap-x-4 gap-y-3 rise rise-2">
             <Link
-              href="/contact"
+              href="/#contact"
               className="btn-lift group inline-flex items-center gap-2.5 bg-accent text-white px-6 py-3 text-[14px] font-semibold hover:bg-accent-hot"
             >
               Request site survey
               <Arrow />
             </Link>
             <Link
-              href="/products"
+              href="/#capabilities"
               className="group inline-flex items-center gap-2.5 border border-white/20 bg-white/5 backdrop-blur text-white px-6 py-3 text-[14px] font-semibold hover:bg-white/10 transition-colors"
             >
               View capabilities

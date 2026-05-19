@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
 
 export default function Services() {
   return (
-    <section className="relative bg-paper py-20 lg:py-28">
+    <section id="capabilities" className="relative bg-paper py-20 lg:py-28">
       <div className="relative mx-auto max-w-[1440px] px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-end">
           <Reveal className="lg:col-span-7">
@@ -31,7 +31,7 @@ export default function Services() {
           {services.map((svc, i) => (
             <Reveal key={svc.slug} delay={80 + i * 90}>
               <Link
-                href={`/products#${svc.slug}`}
+                href="/#contact"
                 className="group relative block aspect-[4/5] overflow-hidden border border-line"
               >
                 <Image

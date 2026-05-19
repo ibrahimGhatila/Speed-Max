@@ -42,7 +42,7 @@ export default function Closing() {
             </p>
             <div className="mt-4 flex flex-col sm:flex-row lg:flex-col gap-2.5">
               <Link
-                href="/contact"
+                href="/#contact"
                 className="btn-lift group inline-flex items-center justify-center gap-2.5 bg-accent text-white px-5 py-3 text-[13px] font-semibold hover:bg-accent-hot"
               >
                 Request site survey
@@ -122,7 +122,7 @@ export default function Closing() {
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link
-                    href={`/products#${s.slug}`}
+                    href="/#capabilities"
                     className="text-white/80 hover:text-white link-ul"
                   >
                     {s.title}
