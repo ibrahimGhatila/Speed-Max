@@ -35,7 +35,6 @@ export const nav: NavItem[] = [
     label: "Capabilities",
     href: "/products",
     children: [
-      { label: "Overview", href: "/products", short: "All six disciplines at a glance" },
       { label: "Structured Cabling", href: "/products/structured-cabling", short: "Cat6A & fibre, certified to standard" },
       { label: "System Integration", href: "/products/system-integration", short: "Servers, switching & storage as one" },
       { label: "IP Telephony", href: "/products/ip-telephony", short: "Modern PBX & SIP, on-prem or cloud" },

@@ -159,9 +159,7 @@ function DesktopDropdown({
   onOpen: () => void;
   onClose: () => void;
 }) {
-  // Split children into the overview link (promoted to header) and the rest.
-  const overview = item.children?.find((c) => c.href === item.href);
-  const items = item.children?.filter((c) => c.href !== item.href) ?? [];
+  const items = item.children ?? [];
 
   return (
     <div
@@ -189,22 +187,6 @@ function DesktopDropdown({
         }`}
       >
         <div className="w-[720px] bg-white border border-line shadow-[0_30px_80px_-30px_rgba(10,20,40,0.35)]">
-          {/* Top bar */}
-          <div className="flex items-center justify-between px-7 py-4 border-b border-line">
-            <span className="text-[10px] tracking-[0.18em] uppercase font-medium text-mute">
-              {item.label}
-            </span>
-            <Link
-              href={item.href}
-              onClick={onClose}
-              className="group/all inline-flex items-center gap-2 text-[12px] font-semibold text-ink hover:text-accent transition-colors"
-            >
-              {overview?.label ?? "View all"}
-              <Arrow className="transition-transform group-hover/all:translate-x-0.5" />
-            </Link>
-          </div>
-
-          {/* 2-column grid of items */}
           <ul className="grid grid-cols-2 divide-x divide-line">
             {items.map((child, idx) => (
               <li
