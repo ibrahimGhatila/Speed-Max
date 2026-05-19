@@ -159,6 +159,10 @@ function DesktopDropdown({
   onOpen: () => void;
   onClose: () => void;
 }) {
+  // Split children into the overview link (promoted to header) and the rest.
+  const overview = item.children?.find((c) => c.href === item.href);
+  const items = item.children?.filter((c) => c.href !== item.href) ?? [];
+
   return (
     <div
       className="relative"
@@ -184,27 +188,46 @@ function DesktopDropdown({
             : "opacity-0 -translate-y-1 pointer-events-none"
         }`}
       >
-        <div className="w-[380px] bg-ink-deep border border-white/10 shadow-2xl shadow-ink-deep/40">
-          <ul>
-            {item.children?.map((child) => (
-              <li key={child.href} className="border-b border-white/6 last:border-b-0">
+        <div className="w-[720px] bg-white border border-line shadow-[0_30px_80px_-30px_rgba(10,20,40,0.35)]">
+          {/* Top bar */}
+          <div className="flex items-center justify-between px-7 py-4 border-b border-line">
+            <span className="text-[10px] tracking-[0.18em] uppercase font-medium text-mute">
+              {item.label}
+            </span>
+            <Link
+              href={item.href}
+              onClick={onClose}
+              className="group/all inline-flex items-center gap-2 text-[12px] font-semibold text-ink hover:text-accent transition-colors"
+            >
+              {overview?.label ?? "View all"}
+              <Arrow className="transition-transform group-hover/all:translate-x-0.5" />
+            </Link>
+          </div>
+
+          {/* 2-column grid of items */}
+          <ul className="grid grid-cols-2 divide-x divide-line">
+            {items.map((child, idx) => (
+              <li
+                key={child.href}
+                className={`${idx >= 2 ? "border-t border-line" : ""}`}
+              >
                 <Link
                   href={child.href}
                   onClick={onClose}
-                  className="group/item flex items-start gap-4 px-5 py-4 hover:bg-white/[0.04] transition-colors"
+                  className="group/item flex items-start gap-4 px-7 py-5 hover:bg-paper-warm/60 transition-colors h-full"
                 >
-                  <span className="mt-1 h-px w-3 bg-white/30 group-hover/item:bg-accent group-hover/item:w-6 transition-all duration-300 shrink-0" />
+                  <span className="mt-1.5 h-px w-3 bg-ink/20 group-hover/item:bg-accent group-hover/item:w-7 transition-all duration-300 shrink-0" />
                   <span className="flex-1">
-                    <span className="block text-[14px] font-medium text-white group-hover/item:text-white">
+                    <span className="block text-[15px] font-semibold text-ink tracking-[-0.02em]">
                       {child.label}
                     </span>
                     {child.short && (
-                      <span className="block text-[12px] text-white/55 mt-0.5">
+                      <span className="block text-[12px] text-ink/65 leading-[1.5] mt-0.5">
                         {child.short}
                       </span>
                     )}
                   </span>
-                  <Arrow className="text-white/30 group-hover/item:text-accent group-hover/item:translate-x-0.5 transition-all" />
+                  <Arrow className="text-ink/25 group-hover/item:text-accent group-hover/item:translate-x-0.5 transition-all mt-1" />
                 </Link>
               </li>
             ))}
