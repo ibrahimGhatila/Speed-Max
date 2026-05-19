@@ -10,7 +10,14 @@ import Trust from "@/components/Trust";
 export const metadata: Metadata = {
   title: "Capabilities",
   description:
-    "Six disciplines under one contractor — structured cabling, system integration, IP telephony, security, collaboration and AutoCount.",
+    "Six disciplines under one accountable contractor — structured cabling, system integration, IP telephony, security & access, collaboration rooms and AutoCount accounting. Delivered in-house across Malaysia.",
+  alternates: { canonical: "/products" },
+  openGraph: {
+    title: "Capabilities — Speedmax",
+    description:
+      "Everything we design, install and maintain — from Cat6A cabling and Wi-Fi 6 networks to IP PBX, CCTV, AutoCount and Microsoft Teams Rooms.",
+    url: "/products",
+  },
 };
 
 export default function ProductsPage() {

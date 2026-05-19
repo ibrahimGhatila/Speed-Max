@@ -6,7 +6,14 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Speedmax studio in Johor Bahru. Brief us on a project — we reply within one working day.",
+    "Brief us on a project. Speedmax studio at 25 Jalan Ekoperniagaan 2/7, Johor Bahru. T +607 213 2500 · sales@speedmax.my. We reply within one working day.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Speedmax",
+    description:
+      "Tell us about the site, the timeline and the constraints — we return a fixed-price proposal within three working days.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {

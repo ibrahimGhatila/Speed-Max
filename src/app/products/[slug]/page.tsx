@@ -21,9 +21,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const svc = services.find((s) => s.slug === slug);
   if (!svc) return {};
+  const path = `/products/${svc.slug}`;
   return {
     title: svc.title,
-    description: svc.short,
+    description: svc.description,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${svc.title} — Speedmax`,
+      description: svc.description,
+      url: path,
+    },
   };
 }
 

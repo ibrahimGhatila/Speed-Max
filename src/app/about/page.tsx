@@ -11,7 +11,14 @@ import { site, stats } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Speedmax Solutions Sdn Bhd — a Johor-based ICT and extra-low-voltage contractor since 2010, serving businesses across Malaysia.",
+    "Speedmax Solutions Sdn Bhd — a Johor-Bahru-based specialist contractor for ICT and extra-low-voltage construction since 2010, serving businesses across Malaysia and Singapore.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Speedmax",
+    description:
+      "A fourteen-year record of quiet work. Specialist contractor for ICT and extra-low-voltage construction since 2010.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {
