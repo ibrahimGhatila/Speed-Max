@@ -1,30 +1,25 @@
 import { ImageResponse } from "next/og";
 
-export const alt =
-  "Speedmax — Network infrastructure for businesses that can't afford downtime";
+export const alt = "Trenddeck — Premium decorative wall panels";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-/**
- * Site-wide social share image (Facebook, LinkedIn, WhatsApp).
- * Dark navy, brand red top accent + dot, large headline, URL bottom-right.
- */
 export default function OpengraphImage() {
   return new ImageResponse(
     (
       <div
         style={{
-          background: "#0a1428",
+          background: "#f4f1ec",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          padding: 72,
+          padding: 80,
           position: "relative",
-          fontFamily: "Inter, sans-serif",
+          fontFamily: "serif",
         }}
       >
-        {/* Brand red top accent */}
+        {/* Top accent line */}
         <div
           style={{
             position: "absolute",
@@ -32,11 +27,11 @@ export default function OpengraphImage() {
             left: 0,
             right: 0,
             height: 6,
-            background: "#e11d2a",
+            background: "#b94a1f",
           }}
         />
 
-        {/* Top row — brand mark + URL */}
+        {/* Top row — wordmark + URL */}
         <div
           style={{
             display: "flex",
@@ -46,52 +41,23 @@ export default function OpengraphImage() {
         >
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 14,
+              color: "#1a1815",
+              fontSize: 26,
+              letterSpacing: "0.32em",
+              fontWeight: 500,
             }}
           >
-            <div
-              style={{
-                width: 44,
-                height: 44,
-                background: "#e11d2a",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <svg viewBox="0 0 32 32" width="26" height="26">
-                <path
-                  d="M8 22 L16 8 L24 22"
-                  stroke="white"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  fill="none"
-                />
-              </svg>
-            </div>
-            <div
-              style={{
-                color: "white",
-                fontSize: 32,
-                fontWeight: 700,
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Speedmax
-            </div>
+            TRENDDECK
           </div>
           <div
             style={{
-              color: "rgba(255,255,255,0.5)",
+              color: "rgba(26,24,21,0.55)",
               fontSize: 16,
               letterSpacing: "0.18em",
               textTransform: "uppercase",
             }}
           >
-            speedmax.my
+            trenddeck.com.tr
           </div>
         </div>
 
@@ -105,50 +71,51 @@ export default function OpengraphImage() {
         >
           <div
             style={{
-              color: "#e11d2a",
+              color: "#b94a1f",
               fontSize: 18,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
               fontWeight: 500,
-              marginBottom: 22,
+              marginBottom: 28,
+              fontFamily: "sans-serif",
             }}
           >
-            Network infrastructure
+            Decorative wall panels
           </div>
           <div
             style={{
-              color: "white",
-              fontSize: 80,
-              lineHeight: 1.05,
-              fontWeight: 700,
-              letterSpacing: "-0.035em",
+              color: "#1a1815",
+              fontSize: 92,
+              lineHeight: 1.02,
+              fontWeight: 400,
+              letterSpacing: "-0.025em",
               maxWidth: 1000,
               display: "flex",
-              flexWrap: "wrap",
-              alignItems: "baseline",
+              flexDirection: "column",
             }}
           >
-            <span>Engineered for businesses that can&apos;t afford</span>
-            <span style={{ color: "#e11d2a", marginLeft: 18 }}>
-              downtime.
+            <span>Premium solutions</span>
+            <span style={{ fontStyle: "italic", color: "#2a2723" }}>
+              for modern interiors.
             </span>
           </div>
           <div
             style={{
-              marginTop: 26,
+              marginTop: 32,
               display: "flex",
               alignItems: "center",
               gap: 18,
             }}
           >
-            <div style={{ width: 56, height: 2, background: "#e11d2a" }} />
+            <div style={{ width: 56, height: 2, background: "#b94a1f" }} />
             <div
               style={{
-                color: "rgba(255,255,255,0.65)",
+                color: "rgba(26,24,21,0.6)",
                 fontSize: 18,
+                fontFamily: "sans-serif",
               }}
             >
-              Speedmax Solutions Sdn Bhd · Johor Bahru · Est. 2010
+              Stone · MDF · Wood — designed and manufactured in-house.
             </div>
           </div>
         </div>

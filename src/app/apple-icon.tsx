@@ -8,24 +8,21 @@ export default function AppleIcon() {
     (
       <div
         style={{
-          background: "#e11d2a",
+          background: "#1f1c19",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          color: "#f4f1ec",
+          fontFamily: "serif",
+          fontStyle: "italic",
+          fontSize: 120,
+          fontWeight: 500,
+          letterSpacing: "-0.04em",
         }}
       >
-        <svg viewBox="0 0 180 180" width="120" height="120">
-          <path
-            d="M44 124 L90 44 L136 124"
-            stroke="white"
-            strokeWidth="18"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="none"
-          />
-        </svg>
+        T
       </div>
     ),
     { ...size },

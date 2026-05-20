@@ -1,25 +1,24 @@
 export const site = {
-  name: "Speedmax",
-  legalName: "Speedmax Solutions Sdn Bhd",
-  ssm: "972917-U",
-  foundedYear: 2010,
-  phone: "+607 213 2500",
-  phoneRaw: "+6072132500",
-  fax: "+607 213 2501",
-  email: "sales@speedmax.my",
-  whatsapp: "60721325000",
+  name: "Trenddeck",
+  legalName: "Trenddeck Decor",
+  tagline: "Decorative wall panels",
+  foundedYear: 2017,
+  phone: "+90 (212) 000 00 00",
+  phoneRaw: "+902120000000",
+  email: "hello@trenddeck.com.tr",
+  whatsapp: "902120000000",
   address: {
-    line1: "25, Jalan Ekoperniagaan 2/7",
-    line2: "Taman Ekoperniagaan",
-    city: "81100 Johor Bahru",
-    state: "Johor",
-    country: "Malaysia",
+    line1: "Atatürk Mah. Çamlık Sok.",
+    line2: "No. 12 / Office 4",
+    city: "Istanbul",
+    state: "Türkiye",
+    country: "Türkiye",
   },
-  hours: "Mon — Fri  ·  09:00–18:00 MYT",
+  hours: "Mon — Sat  ·  10:00 – 19:00",
   social: {
-    facebook: "#",
     instagram: "#",
-    linkedin: "#",
+    facebook: "#",
+    pinterest: "#",
   },
 };
 
@@ -30,167 +29,113 @@ export type NavItem = {
 };
 
 export const nav: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Catalog", href: "/#catalog" },
   { label: "About", href: "/#about" },
+  { label: "Process", href: "/#process" },
   { label: "Contact", href: "/#contact" },
 ];
 
-export const services = [
-  {
-    slug: "structured-cabling",
-    number: "01",
-    title: "Structured Cabling",
-    short: "Cat6A and fibre, designed and certified to standard.",
-    description:
-      "Design, installation and certification of structured cabling for offices, warehouses and data centres — engineered to meet today's demands and tomorrow's bandwidth.",
-    specs: [
-      "Cat5e · Cat6 · Cat6A · OS2 fibre",
-      "Permanent-link & channel certification",
-      "Single & multi-site rollouts",
-      "Containment & cable management",
-    ],
-    image: "structuredCabling",
-  },
-  {
-    slug: "system-integration",
-    number: "02",
-    title: "System Integration",
-    short: "Servers, switching and storage, working as one.",
-    description:
-      "From bare-metal racking to Microsoft 365 migration, we bring hardware, networks and software into a single, supportable stack.",
-    specs: [
-      "Server, storage & virtualisation",
-      "L2/L3 networking & Wi-Fi 6",
-      "Microsoft 365 & email migration",
-      "Documentation & handover",
-    ],
-    image: "systemIntegration",
-  },
-  {
-    slug: "ip-telephony",
-    number: "03",
-    title: "IP Telephony",
-    short: "Modern PBX and SIP — on-prem or cloud.",
-    description:
-      "IP telephony that scales with your team. Mobile extensions, call recording, IVR and reporting, integrated cleanly with your existing carrier.",
-    specs: [
-      "Yeastar · Grandstream · 3CX",
-      "SIP trunk integration",
-      "Mobile & remote extensions",
-      "Call recording & analytics",
-    ],
-    image: "ipPbx",
-  },
-  {
-    slug: "security",
-    number: "04",
-    title: "Security & Access",
-    short: "IP surveillance and access control, monitored 24/7.",
-    description:
-      "Designed-in security, not bolted-on. IP cameras, access-controlled doors and visitor management — auditable and remotely supervised.",
-    specs: [
-      "Hikvision · Dahua · Uniview",
-      "Card & biometric access",
-      "Visitor management",
-      "Remote monitoring & alerts",
-    ],
-    image: "security",
-  },
-  {
-    slug: "collaboration",
-    number: "05",
-    title: "Collaboration Rooms",
-    short: "Meeting rooms ready for Teams, Zoom and Meet.",
-    description:
-      "Conference-room AV that just works — cameras, mics, displays and wireless presentation engineered to remove the awkward start of every meeting.",
-    specs: [
-      "Microsoft Teams Rooms",
-      "Conference-room audio & video",
-      "Wireless presentation",
-      "Single-cable connectivity",
-    ],
-    image: "collaboration",
-  },
-  {
-    slug: "autocount",
-    number: "06",
-    title: "AutoCount Suite",
-    short: "Accounting, POS and e-Invoice — certified partner.",
-    description:
-      "We implement and support AutoCount Accounting, Inventory, POS, Payroll and e-Invoice for Malaysian SMEs — from licensing to month-end training.",
-    specs: [
-      "Accounting & Inventory",
-      "POS & Payroll",
-      "e-Invoice compliance",
-      "Training & ongoing support",
-    ],
-    image: "autocount",
-  },
-];
-
 export const stats = [
-  { value: "14", suffix: "yrs", label: "In business" },
-  { value: "1,200", suffix: "+", label: "Projects delivered" },
-  { value: "99.9", suffix: "%", label: "Uptime SLA" },
-  { value: "24", suffix: "h", label: "Response window" },
+  { value: "8", suffix: "+", label: "Years of experience" },
+  { value: "120", suffix: "+", label: "Turnkey projects" },
+  { value: "100", suffix: "%", label: "In-house manufacturing" },
 ];
 
-export const partners = [
-  "AutoCount",
-  "Grandstream",
-  "Yeastar",
-  "Cisco",
-  "Ubiquiti",
-  "Hikvision",
-  "Microsoft",
-  "Dell",
-  "Fortinet",
-  "HPE Aruba",
-];
-
-export const industries = [
-  { slug: "manufacturing", title: "Manufacturing", body: "Plant networks and OT cabling, designed for uptime.", image: "indManufacturing" },
-  { slug: "retail", title: "Retail & F&B", body: "POS, Wi-Fi and CCTV across multi-outlet footprints.", image: "indRetail" },
-  { slug: "healthcare", title: "Healthcare", body: "Clinic and hospital networks with strict reliability needs.", image: "indHealthcare" },
-  { slug: "education", title: "Education", body: "Campus Wi-Fi, classroom AV and CCTV.", image: "indEducation" },
-  { slug: "hospitality", title: "Hospitality", box: true, body: "Hotel guest networks, IPTV and access control.", image: "indHospitality" },
-  { slug: "professional", title: "Professional Services", body: "Office networks, telephony and Microsoft 365.", image: "indProfessional" },
-];
-
-export const approach = [
+export const categories = [
   {
-    number: "01",
-    title: "Survey",
-    body: "A site visit and brief — on-site or virtual. We leave with measurements, photographs and a clear scope of work.",
+    slug: "stone",
+    title: "Stone",
+    short: "Travertine, marble and limestone slabs cut to bespoke profiles.",
+    image: "matStone",
   },
   {
-    number: "02",
-    title: "Design",
-    body: "A fixed-price proposal with bill of materials and floor plan. You see exactly what is being installed, where, by when, and at what cost.",
+    slug: "mdf",
+    title: "MDF",
+    short: "Painted and veneered MDF panels with milled relief patterns.",
+    image: "matMDF",
   },
   {
-    number: "03",
-    title: "Deliver",
-    body: "Installation by our own engineers, certified to standard, documented in a handover pack, and supported on a response SLA you choose.",
+    slug: "wood",
+    title: "Wood",
+    short: "Solid oak, walnut and ash slats with hand-finished surfaces.",
+    image: "matWood",
   },
 ];
 
-export const featured = {
-  client: "Confidential manufacturer",
-  scope: "Datacenter buildout · Cat6A · 480 drops",
-  location: "Senai, Johor",
-  year: "2024",
-  quote:
-    "Speedmax delivered a clean, certified install across three floors with zero downtime on cutover. Documentation was the best we have ever received from a contractor.",
-  attribution: "IT Director, manufacturing client",
-  image: "featuredProject",
-};
+export const benefits = [
+  {
+    num: "01",
+    title: "Full turnkey service",
+    body: "We take care of everything — from concept and design to production and installation. One contract, one schedule, one accountable team.",
+    icon: "turnkey" as const,
+  },
+  {
+    num: "02",
+    title: "In-house manufacturing",
+    body: "Every panel is milled, finished and quality-checked in our own workshop. Consistent quality, predictable lead times.",
+    icon: "factory" as const,
+  },
+  {
+    num: "03",
+    title: "Custom design",
+    body: "We don't just stock catalog SKUs. Bring a mood, a sketch or a fragment of an idea — we engineer it into a buildable panel.",
+    icon: "compass" as const,
+  },
+  {
+    num: "04",
+    title: "Nationwide service",
+    body: "Our own installation crews travel anywhere in Türkiye, with guaranteed timelines and post-install warranty.",
+    icon: "map" as const,
+  },
+];
 
-export const coverage = [
-  { region: "Johor", note: "HQ + field engineering" },
-  { region: "Klang Valley", note: "Project teams" },
-  { region: "Penang", note: "Partner network" },
-  { region: "East Coast", note: "On request" },
-  { region: "Singapore", note: "Cross-border projects" },
+export const process = [
+  {
+    num: "01",
+    title: "Concept & design",
+    body: "We capture the room, mood and constraints, then sketch a panel layout you can sign off on before anything is cut.",
+    image: "procConcept" as const,
+  },
+  {
+    num: "02",
+    title: "Planning",
+    body: "A precise spec, bill of materials and production schedule — so you know what arrives on site, and exactly when.",
+    image: "procPlanning" as const,
+  },
+  {
+    num: "03",
+    title: "Production",
+    body: "Manufactured in our own workshop with clean cuts, hand-sanded edges and a final QC against your sign-off.",
+    image: "procProduction" as const,
+  },
+  {
+    num: "04",
+    title: "Turnkey installation",
+    body: "Our own crew handles delivery and install, leaving the site clean and the surface ready for daylight.",
+    image: "procInstall" as const,
+  },
+];
+
+export const testimonials = [
+  {
+    quote:
+      "We were blown away by the result. The team didn't just complete the order — they captured the calm of the brief. The dark walnut feels luxurious, and the living room had transformed before I had walked back through the door.",
+    name: "Anna L.",
+    role: "Living room · Kyiv",
+    image: "testLiving" as const,
+  },
+  {
+    quote:
+      "Trenddeck handled every step — measurement, design, manufacturing and the install. The dining wall is now the first thing anyone notices when they walk in. Worth every lira.",
+    name: "Mehmet K.",
+    role: "Dining room · Istanbul",
+    image: "testDining" as const,
+  },
+  {
+    quote:
+      "I sent them a mood board on a Tuesday and had a CAD layout back by Friday. Production was on schedule, install was clean. I would absolutely work with them again.",
+    name: "Sara D.",
+    role: "Bedroom · Izmir",
+    image: "testBedroom" as const,
+  },
 ];

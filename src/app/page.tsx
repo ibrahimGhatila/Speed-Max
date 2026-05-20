@@ -1,23 +1,21 @@
-import Hero from "@/components/Hero";
-import Trust from "@/components/Trust";
-import Services from "@/components/Services";
-import Industries from "@/components/Industries";
-import Approach from "@/components/Approach";
-import Coverage from "@/components/Coverage";
-import Quote from "@/components/Quote";
-import About from "@/components/About";
+import Hero from "@/components/home/Hero";
+import AboutStats from "@/components/home/AboutStats";
+import Catalog from "@/components/home/Catalog";
+import WhyUs from "@/components/home/WhyUs";
+import Process from "@/components/home/Process";
+import Testimonials from "@/components/home/Testimonials";
+import ContactCTA from "@/components/home/ContactCTA";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Trust />
-      <Services />
-      <Industries />
-      <Approach />
-      <Coverage />
-      <Quote />
-      <About />
+      <AboutStats />
+      <Catalog />
+      <WhyUs />
+      <Process />
+      <Testimonials />
+      <ContactCTA />
     </>
   );
 }

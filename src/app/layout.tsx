@@ -1,69 +1,59 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Closing from "@/components/Closing";
-import StructuredData from "@/components/StructuredData";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const BASE_URL = "https://www.speedmax.my";
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
+const BASE_URL = "https://www.trenddeck.com.tr";
 
 const description =
-  "Since 2010, Speedmax Solutions has built the structured cabling, networks, IP telephony, security and AutoCount accounting systems Malaysian businesses depend on. Headquartered in Johor Bahru, serving Malaysia and Singapore.";
+  "Trenddeck designs and manufactures decorative wall panels — stone, MDF and wood — milled in our own workshop and installed by our own crews. Turnkey, from sketch to surface.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default:
-      "Speedmax — Network infrastructure for businesses that can't afford downtime",
-    template: "%s — Speedmax",
+    default: "Trenddeck — Premium decorative wall panels",
+    template: "%s — Trenddeck",
   },
   description,
-  applicationName: "Speedmax",
-  authors: [{ name: "Speedmax Solutions Sdn Bhd", url: BASE_URL }],
-  creator: "Speedmax Solutions Sdn Bhd",
-  publisher: "Speedmax Solutions Sdn Bhd",
+  applicationName: "Trenddeck",
   keywords: [
-    "Speedmax",
-    "Speedmax Solutions",
-    "structured cabling Malaysia",
-    "structured cabling Johor Bahru",
-    "Cat6A installation",
-    "fibre optic installation",
-    "system integration Malaysia",
-    "IP telephony Malaysia",
-    "IP PBX",
-    "SIP trunk Malaysia",
-    "CCTV installation Johor",
-    "access control Malaysia",
-    "AutoCount Johor Bahru",
-    "AutoCount partner Malaysia",
-    "ICT contractor Johor",
-    "extra-low-voltage contractor",
-    "network infrastructure Malaysia",
+    "decorative wall panels",
+    "interior wall panels",
+    "MDF panels",
+    "stone wall panels",
+    "wood wall panels",
+    "custom wall panels",
+    "turnkey interior decor",
+    "Trenddeck",
   ],
-  category: "Technology Services",
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    locale: "en_MY",
+    locale: "en",
     url: BASE_URL,
-    siteName: "Speedmax",
-    title:
-      "Speedmax — Network infrastructure for businesses that can't afford downtime",
+    siteName: "Trenddeck",
+    title: "Trenddeck — Premium decorative wall panels",
     description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Speedmax",
+    title: "Trenddeck",
     description,
   },
   robots: {
@@ -74,20 +64,16 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
-      "max-video-preview": -1,
     },
   },
-  // Icons (favicon, apple-icon) are auto-generated from
-  // src/app/icon.tsx and src/app/apple-icon.tsx.
-  // verification: { google: "REPLACE_WITH_VERIFICATION_TOKEN" },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a1428" },
+    { media: "(prefers-color-scheme: light)", color: "#f4f1ec" },
+    { media: "(prefers-color-scheme: dark)", color: "#1f1c19" },
   ],
 };
 
@@ -97,12 +83,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en-MY" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-ink text-white">
-        <StructuredData />
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-paper text-ink">
         <Header />
         <main className="flex-1">{children}</main>
-        <Closing />
+        <Footer />
       </body>
     </html>
   );

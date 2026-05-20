@@ -1,9 +1,7 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://www.speedmax.my";
+const BASE_URL = "https://www.trenddeck.com.tr";
 
-// Single-page site — only the root URL is canonical.
-// Inner pages exist as content stubs but aren't surfaced to crawlers.
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
